@@ -252,33 +252,35 @@ scriptencoding utf-8
                 \ 'eex'      : '',
                 \ 'leex'     : '',
                 \ 'heex'     : '',
-                \ 'vim'      : '',
-                \ 'ai'       : '',
-                \ 'psd'      : '',
-                \ 'psb'      : '',
-                \ 'ts'       : '',
-                \ 'tsx'      : '',
-                \ 'jl'       : '',
-                \ 'pp'       : '',
-                \ 'vue'      : '﵂',
-                \ 'elm'      : '',
-                \ 'swift'    : '',
-                \ 'xcplayground' : '',
-                \ 'tex'      : 'ﭨ',
-                \ 'r'        : 'ﳒ',
-                \ 'rproj'    : '鉶',
-                \ 'sol'      : 'ﲹ',
-                \ 'pem'      : '',
-                \ 'w'        : '📁',
-                \ 'man'      : '👤 ',
-                \ 'txt'      : '📄 ',
+                \ 'vim'         :'',
+                \ 'ai'          :'',
+                \ 'psd'         :'',
+                \ 'psb'         :'',
+                \ 'ts'          :'',
+                \ 'tsx'         :'',
+                \ 'jl'          :'',
+                \ 'pp'          :'',
+                \ 'vue'         :'﵂',
+                \ 'elm'         :'',
+                \ 'swift'       :'',
+                \ 'xcplayground':'',
+                \ 'tex'         :'ﭨ',
+                \ 'r'           :'ﳒ',
+                \ 'rproj'       :'鉶',
+                \ 'sol'         :'ﲹ',
+                \ 'pem'         :'',
+                \ 'ahk'         :'',
+                \ 'autohotkey'  :'',
+                \ 'w'           :'📁',
+                \ 'man'         :'👤 ',
+                \ 'txt'         :'📄 ',
                 \}
 
             if !exists('g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols')
                 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
             en
 
-            "  allow user overriding of ✌specific individual keys ✌in vimrc
+            "  allow user overriding of ¿specific individual keys ¿in vimrc
             " (only gvimrc was working previously)
             for [key, val] in items(s:file_node_extensions)
                 if !has_key(g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols, key)
@@ -658,7 +660,7 @@ scriptencoding utf-8
 
 
 " call setup after processing all the functions (to avoid errors)
-" had some issues with ✌VimEnter,✌ for now using :
+" had some issues with ¿VimEnter,¿ for now using :
     call s:initialize()
 
 let &cpo = s:save_cpo
