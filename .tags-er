@@ -95,14 +95,10 @@ g:webdevicons_enable_nerdtree	nerdtree_plugin/webdevicons.vim	/^     let g:webde
 g:webdevicons_enable_nerdtree	nerdtree_plugin/webdevicons.vim	/^  let g:webdevicons_enable_nerdtree = 1$/;"	v
 g:webdevicons_gui_glyph_fix	nerdtree_plugin/webdevicons.vim	/^    let g:webdevicons_gui_glyph_fix = 0$/;"	v
 g:webdevicons_gui_glyph_fix	nerdtree_plugin/webdevicons.vim	/^    let g:webdevicons_gui_glyph_fix = 1$/;"	v
-s:Assert	test/filetype.vim	/^function! s:Assert(filename, icon)$/;"	f
 s:CursorHoldUpdate	plugin/webdevicons.vim	/^            fun! s:CursorHoldUpdate()$/;"	f
 s:DevIconsGetArtifactFix	plugin/webdevicons.vim	/^    fun! s:DevIconsGetArtifactFix()$/;"	f
 s:Refresh	nerdtree_plugin/webdevicons.vim	/^function! s:Refresh()$/;"	f
 s:SetupListeners	nerdtree_plugin/webdevicons.vim	/^function! s:SetupListeners()$/;"	f
-s:assert	test/default_setting.vim	/^let s:assert = themis#helper('assert')$/;"	v
-s:assert	test/fileformat.vim	/^let s:assert = themis#helper('assert')$/;"	v
-s:assert	test/filetype.vim	/^let s:assert = themis#helper('assert')$/;"	v
 s:column	autoload/vimfiler/columns/devicons.vim	/^let s:column = {$/;"	v
 s:column.define_syntax	autoload/vimfiler/columns/devicons.vim	/^function! s:column.define_syntax(context) abort "{{{$/;"	f
 s:column.get	autoload/vimfiler/columns/devicons.vim	/^function! s:column.get(file, context) abort$/;"	f
@@ -121,62 +117,6 @@ s:setDictionaries	plugin/webdevicons.vim	/^    fun! s:setDictionaries()$/;"	f
 s:setSyntax	plugin/webdevicons.vim	/^    fun! s:setSyntax()$/;"	f
 s:softRefreshNerdTree	plugin/webdevicons.vim	/^        fun! s:softRefreshNerdTree()$/;"	f
 s:strip	plugin/webdevicons.vim	/^    fun! s:strip(input)$/;"	f
-s:suite	test/default_setting.vim	/^let s:suite = themis#suite('Webdevicons-default-value')$/;"	v
-s:suite	test/fileformat.vim	/^let s:suite = themis#suite('WebDevIconsGetFileFormatSymbol')$/;"	v
-s:suite	test/filetype.vim	/^let s:suite = themis#suite('WebDevIconsGetFileTypeSymbol')$/;"	v
-s:suite.ConfigOptions	test/default_setting.vim	/^function! s:suite.ConfigOptions()$/;"	f
-s:suite.DefaultIcon	test/fileformat.vim	/^function! s:suite.DefaultIcon()$/;"	f
-s:suite.ExtensionConfig	test/default_setting.vim	/^function! s:suite.ExtensionConfig()$/;"	f
-s:suite.MacIcon	test/fileformat.vim	/^function! s:suite.MacIcon()$/;"	f
-s:suite.NoArgument_EditMKFile_GetGearIcon	test/filetype.vim	/^function! s:suite.NoArgument_EditMKFile_GetGearIcon()$/;"	f
-s:suite.NoArgument_EditPythonFile_GetPythonIcon	test/filetype.vim	/^function! s:suite.NoArgument_EditPythonFile_GetPythonIcon()$/;"	f
-s:suite.NoArgument_EditRustFile_GetRustIcon	test/filetype.vim	/^function! s:suite.NoArgument_EditRustFile_GetRustIcon()$/;"	f
-s:suite.NoArgument_EditVimFile_GetVimIcon	test/filetype.vim	/^function! s:suite.NoArgument_EditVimFile_GetVimIcon()$/;"	f
-s:suite.NoArgument_EditjavaScriptFile_GetjavaScriptIcon	test/filetype.vim	/^function! s:suite.NoArgument_EditjavaScriptFile_GetjavaScriptIcon()$/;"	f
-s:suite.NoArgument_Editvimrc_GetVimIcon	test/filetype.vim	/^function! s:suite.NoArgument_Editvimrc_GetVimIcon()$/;"	f
-s:suite.NoArgument_OverWriteFileType_GetVimIcon	test/filetype.vim	/^function! s:suite.NoArgument_OverWriteFileType_GetVimIcon()$/;"	f
-s:suite.OneArgument_EditPythonFile_GetRubyIcon	test/filetype.vim	/^function! s:suite.OneArgument_EditPythonFile_GetRubyIcon()$/;"	f
-s:suite.OneArgument_GetCIcon	test/filetype.vim	/^function! s:suite.OneArgument_GetCIcon()$/;"	f
-s:suite.OneArgument_GetCSSIcon	test/filetype.vim	/^function! s:suite.OneArgument_GetCSSIcon()$/;"	f
-s:suite.OneArgument_GetCSharpIcon	test/filetype.vim	/^function! s:suite.OneArgument_GetCSharpIcon()$/;"	f
-s:suite.OneArgument_GetDartIcon	test/filetype.vim	/^function! s:suite.OneArgument_GetDartIcon()$/;"	f
-s:suite.OneArgument_GetDropboxIcon	test/filetype.vim	/^function! s:suite.OneArgument_GetDropboxIcon()$/;"	f
-s:suite.OneArgument_GetElmIcon	test/filetype.vim	/^function! s:suite.OneArgument_GetElmIcon()$/;"	f
-s:suite.OneArgument_GetGoIcon	test/filetype.vim	/^function! s:suite.OneArgument_GetGoIcon()$/;"	f
-s:suite.OneArgument_GetJavaIcon	test/filetype.vim	/^function! s:suite.OneArgument_GetJavaIcon()$/;"	f
-s:suite.OneArgument_GetLicenseIcon	test/filetype.vim	/^function! s:suite.OneArgument_GetLicenseIcon()$/;"	f
-s:suite.OneArgument_GetLuaIcon	test/filetype.vim	/^function! s:suite.OneArgument_GetLuaIcon()$/;"	f
-s:suite.OneArgument_GetNodeModuleIcon	test/filetype.vim	/^function! s:suite.OneArgument_GetNodeModuleIcon()$/;"	f
-s:suite.OneArgument_GetPhpIcon	test/filetype.vim	/^function! s:suite.OneArgument_GetPhpIcon()$/;"	f
-s:suite.OneArgument_GetRIcon	test/filetype.vim	/^function! s:suite.OneArgument_GetRIcon()$/;"	f
-s:suite.OneArgument_GetRobotIcon	test/filetype.vim	/^function! s:suite.OneArgument_GetRobotIcon()$/;"	f
-s:suite.OneArgument_GetRssIcon	test/filetype.vim	/^function! s:suite.OneArgument_GetRssIcon()$/;"	f
-s:suite.OneArgument_GetScalaIcon	test/filetype.vim	/^function! s:suite.OneArgument_GetScalaIcon()$/;"	f
-s:suite.OneArgument_GetSolidityIcon	test/filetype.vim	/^function! s:suite.OneArgument_GetSolidityIcon()$/;"	f
-s:suite.OneArgument_GetTexIcon	test/filetype.vim	/^function! s:suite.OneArgument_GetTexIcon()$/;"	f
-s:suite.OneArgument_GetTypeScriptIcon	test/filetype.vim	/^function! s:suite.OneArgument_GetTypeScriptIcon()$/;"	f
-s:suite.OneArgument_GetVueIcon	test/filetype.vim	/^function! s:suite.OneArgument_GetVueIcon()$/;"	f
-s:suite.OneArgument_PemIcon	test/filetype.vim	/^function! s:suite.OneArgument_PemIcon()$/;"	f
-s:suite.WindowsIcon	test/fileformat.vim	/^function! s:suite.WindowsIcon()$/;"	f
-s:suite.__OneArgument_CppIcon__	test/filetype.vim	/^function! s:suite.__OneArgument_CppIcon__()$/;"	f
-s:suite.__OneArgument_DBIcon__	test/filetype.vim	/^function! s:suite.__OneArgument_DBIcon__()$/;"	f
-s:suite.__OneArgument_DockerIcon__	test/filetype.vim	/^function! s:suite.__OneArgument_DockerIcon__()$/;"	f
-s:suite.__OneArgument_ElixirIcon__	test/filetype.vim	/^function! s:suite.__OneArgument_ElixirIcon__()$/;"	f
-s:suite.__OneArgument_ErlangIcon__	test/filetype.vim	/^function! s:suite.__OneArgument_ErlangIcon__()$/;"	f
-s:suite.__OneArgument_FSharpIcon__	test/filetype.vim	/^function! s:suite.__OneArgument_FSharpIcon__()$/;"	f
-s:suite.__OneArgument_GearIcon__	test/filetype.vim	/^function! s:suite.__OneArgument_GearIcon__()$/;"	f
-s:suite.__OneArgument_HaskellIcon__	test/filetype.vim	/^function! s:suite.__OneArgument_HaskellIcon__()$/;"	f
-s:suite.__OneArgument_JavaScriptIcon__	test/filetype.vim	/^function! s:suite.__OneArgument_JavaScriptIcon__()$/;"	f
-s:suite.__OneArgument_JsonIcon__	test/filetype.vim	/^function! s:suite.__OneArgument_JsonIcon__()$/;"	f
-s:suite.__OneArgument_MarkDownIcon__	test/filetype.vim	/^function! s:suite.__OneArgument_MarkDownIcon__()$/;"	f
-s:suite.__OneArgument_PerlIcon__	test/filetype.vim	/^function! s:suite.__OneArgument_PerlIcon__()$/;"	f
-s:suite.__OneArgument_PythonIcon__	test/filetype.vim	/^function! s:suite.__OneArgument_PythonIcon__()$/;"	f
-s:suite.__OneArgument_ReactIcon__	test/filetype.vim	/^function! s:suite.__OneArgument_ReactIcon__()$/;"	f
-s:suite.__OneArgument_RubyIcon__	test/filetype.vim	/^function! s:suite.__OneArgument_RubyIcon__()$/;"	f
-s:suite.__OneArgument_RustIcon__	test/filetype.vim	/^function! s:suite.__OneArgument_RustIcon__()$/;"	f
-s:suite.__OneArgument_ShellIcon__	test/filetype.vim	/^function! s:suite.__OneArgument_ShellIcon__()$/;"	f
-s:suite.__OneArgument_SwiftIcon__	test/filetype.vim	/^function! s:suite.__OneArgument_SwiftIcon__()$/;"	f
-s:suite.__OneArgument_VimIcon__	test/filetype.vim	/^function! s:suite.__OneArgument_VimIcon__()$/;"	f
 s:version	plugin/webdevicons.vim	/^let s:version = '0.11.0'$/;"	v
 vim	pythonx/vim_devicons/powerline/segments.py	/^	vim = {}$/;"	v
 vim-startify	DEVELOPER.md	/^##### vim-startify$/;"	T	subsubsection:API""Integration with other plugins

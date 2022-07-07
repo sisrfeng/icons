@@ -271,6 +271,10 @@ scriptencoding utf-8
                 \ 'swift'       :'',
                 \ 'xcplayground':'',
                 \ 'tex'         :'ﭨ',
+                \ 'bib'         :'ﭨ',
+                \ 'bbl'         :'ﭨ',
+                \ 'xdv'         :'ﭨ',
+                \ 'cls'         :'ﭨ',
                 \ 'r'           :'ﳒ',
                 \ 'rproj'       :'鉶',
                 \ 'sol'         :'ﲹ',
@@ -278,8 +282,9 @@ scriptencoding utf-8
                 \ 'ahk'         :'',
                 \ 'autohotkey'  :'',
                 \ 'w'           :'📁',
-                \ 'man'         :'👤 ',
-                \ 'txt'         :'📄 ',
+                \ 'man'         :'👤',
+                \ 'txt'         :'📄',
+                \ 'snippets'    :'',
                 \}
 
             if !exists('g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols')
