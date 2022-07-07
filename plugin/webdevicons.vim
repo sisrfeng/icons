@@ -158,10 +158,10 @@ scriptencoding utf-8
                 \ 'ejs'      : '',
                 \ 'css'      : '',
                 \ 'less'     : '',
-                \ 'md'       : '',
-                \ 'mdx'      : '',
-                \ 'markdown' : '',
-                \ 'rmd'      : '',
+                \ 'md'       : '⏬',
+                \ 'mdx'      : '⏬',
+                \ 'markdown' : '⏬',
+                \ 'rmd'      : '⏬',
                 \ 'json'     : '',
                 \ 'webmanifest' : '',
                 \ 'js'       : '',
@@ -171,10 +171,12 @@ scriptencoding utf-8
                 \ 'gemspec'  : '',
                 \ 'rake'     : '',
                 \ 'php'      : '',
+                \
                 \ 'py'       : '',
                 \ 'pyc'      : '',
                 \ 'pyo'      : '',
                 \ 'pyd'      : '',
+                \
                 \ 'coffee'   : '',
                 \ 'mustache' : '',
                 \ 'hbs'      : '',
@@ -209,14 +211,18 @@ scriptencoding utf-8
                 \ 'nix'      : '',
                 \ 'lua'      : '',
                 \ 'java'     : '',
-                \ 'sh'       : '',
+                \ 'sh'       : '🐚',
                 \ 'fish'     : '',
-                \ 'bash'     : '',
-                \ 'zsh'      : '',
+                \ 'bash'     : '🐚',
+                \ 'zsh'      : '🐚',
+                \ '.zlogin'  : '🐚',
+                \ 'zshenv'   : '🐚',
+                \ 'zz'       : '🐚',
                 \ 'ksh'      : '',
                 \ 'csh'      : '',
                 \ 'awk'      : '',
                 \ 'ps1'      : '',
+                \ 'snippets' : '',
                 \ 'ml'       : 'λ',
                 \ 'mli'      : 'λ',
                 \ 'diff'     : '',
@@ -374,14 +380,14 @@ scriptencoding utf-8
         if g:webdevicons_enable_nerdtree == 1 && g:webdevicons_conceal_nerdtree_brackets == 1
         augroup webdevicons_conceal_nerdtree_brackets
             au!
-            autocmd FileType nerdtree syntax match hideBracketsInNerdTree "\]" contained conceal containedin=NERDTreeFlags
-            autocmd FileType nerdtree syntax match hideBracketsInNerdTree "\[" contained conceal containedin=NERDTreeFlags
-            autocmd FileType nerdtree syntax match hideBracketsInNerdTree "\]" contained conceal containedin=NERDTreeLinkFile
-            autocmd FileType nerdtree syntax match hideBracketsInNerdTree "\]" contained conceal containedin=NERDTreeLinkDir
-            autocmd FileType nerdtree syntax match hideBracketsInNerdTree "\[" contained conceal containedin=NERDTreeLinkFile
-            autocmd FileType nerdtree syntax match hideBracketsInNerdTree "\[" contained conceal containedin=NERDTreeLinkDir
-            autocmd FileType nerdtree setlocal conceallevel=3
-            autocmd FileType nerdtree setlocal concealcursor=nvic
+            au      FileType nerdtree syntax match hideBracketsInNerdTree "\]" contained conceal containedin=NERDTreeFlags
+            au      FileType nerdtree syntax match hideBracketsInNerdTree "\[" contained conceal containedin=NERDTreeFlags
+            au      FileType nerdtree syntax match hideBracketsInNerdTree "\]" contained conceal containedin=NERDTreeLinkFile
+            au      FileType nerdtree syntax match hideBracketsInNerdTree "\]" contained conceal containedin=NERDTreeLinkDir
+            au      FileType nerdtree syntax match hideBracketsInNerdTree "\[" contained conceal containedin=NERDTreeLinkFile
+            au      FileType nerdtree syntax match hideBracketsInNerdTree "\[" contained conceal containedin=NERDTreeLinkDir
+            au      FileType nerdtree setl     conceallevel=3
+            au      FileType nerdtree setl     concealcursor=nvic
         augroup END
         en
     endf
@@ -391,7 +397,7 @@ scriptencoding utf-8
             fun! s:setCursorHold()
                 if g:webdevicons_enable_nerdtree
                 augroup webdevicons_cursor_hold
-                    autocmd CursorHold * silent! call s:CursorHoldUpdate()
+                    au      CursorHold * silent! call s:CursorHoldUpdate()
                 augroup END
                 en
             endf
