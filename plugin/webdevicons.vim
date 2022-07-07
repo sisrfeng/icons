@@ -284,7 +284,6 @@ scriptencoding utf-8
                 \ 'w'           :'📁',
                 \ 'man'         :'👤',
                 \ 'txt'         :'📄',
-                \ 'snippets'    :'',
                 \}
 
             if !exists('g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols')
