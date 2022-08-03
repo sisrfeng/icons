@@ -1,7 +1,5 @@
 " Version: 0.11.0
 " Webpage: https://github.com/ryanoasis/vim-devicons
-" Maintainer: Ryan McIntyre <ryanoasis@gmail.com>
-" License: see LICENSE
 
 let s:version = '0.11.0'
 let s:plugin_home = expand('<sfile>:p:h:h')
@@ -10,13 +8,9 @@ let s:plugin_home = expand('<sfile>:p:h:h')
 scriptencoding utf-8
 
 " standard fix/safety
-    let s:save_cpo = &cpo
-    set cpo&vim
+    let s:save_cpo = &cpo  | set cpo&vim
 
-
-    if exists('g:loaded_webdevicons')
-    finish
-    en
+    if exists('g:loaded_webdevicons')  | finish  | en
 
     let g:loaded_webdevicons = 1
 
@@ -147,10 +141,10 @@ scriptencoding utf-8
 
     fun! s:setDictionaries()
         " XX.extensions
+        "
+        "\ 
             let s:file_node_extensions = {
                 \ 'styl'     : '',
-                \ 'sass'     : '',
-                \ 'scss'     : '',
                 \ 'htm'      : '',
                 \ 'html'     : '',
                 \ 'slim'     : '',
@@ -158,18 +152,21 @@ scriptencoding utf-8
                 \ 'ejs'      : '',
                 \ 'css'      : '',
                 \ 'less'     : '',
-                \ 'md'       : '⏬',
-                \ 'mdx'      : '⏬',
-                \ 'markdown' : '⏬',
-                \ 'rmd'      : '⏬',
+                \ 'md'       : '⬇️',
+                \ 'mdx'      : '⬇️',
+                \ 'markdown' : '⬇️',
+                \ 'rmd'      : '⬇️',
+                \
                 \ 'json'     : '',
                 \ 'webmanifest' : '',
                 \ 'js'       : '',
                 \ 'mjs'      : '',
                 \ 'jsx'      : '',
+                \
                 \ 'rb'       : '',
                 \ 'gemspec'  : '',
                 \ 'rake'     : '',
+                \
                 \ 'php'      : '',
                 \
                 \ 'py'       : '',
@@ -180,6 +177,7 @@ scriptencoding utf-8
                 \ 'coffee'   : '',
                 \ 'mustache' : '',
                 \ 'hbs'      : '',
+                \
                 \ 'conf'     : '',
                 \ 'ini'      : '',
                 \ 'yml'      : '',
@@ -187,6 +185,7 @@ scriptencoding utf-8
                 \ 'toml'     : '',
                 \ 'bat'      : '',
                 \ 'mk'       : '',
+                \
                 \ 'jpg'      : '',
                 \ 'jpeg'     : '',
                 \ 'bmp'      : '',
@@ -194,6 +193,7 @@ scriptencoding utf-8
                 \ 'webp'     : '',
                 \ 'gif'      : '',
                 \ 'ico'      : '',
+                \
                 \ 'twig'     : '',
                 \ 'cpp'      : '',
                 \ 'c++'      : '',
@@ -201,23 +201,27 @@ scriptencoding utf-8
                 \ 'cc'       : '',
                 \ 'cp'       : '',
                 \ 'c'        : '',
+                \
                 \ 'cs'       : '',
                 \ 'h'        : '',
                 \ 'hh'       : '',
                 \ 'hpp'      : '',
                 \ 'hxx'      : '',
+                \
                 \ 'hs'       : '',
                 \ 'lhs'      : '',
                 \ 'nix'      : '',
-                \ 'lua'      : '',
+                \
+                             "\ ☽
+                \ 'lua'      : '☾',
                 \ 'java'     : '',
-                \ 'sh'       : '🐚',
                 \ 'fish'     : '',
-                \ 'bash'     : '🐚',
-                \ 'zsh'      : '🐚',
-                \ '.zlogin'  : '🐚',
-                \ 'zshenv'   : '🐚',
-                \ 'zz'       : '🐚',
+                \ 'sh'       : '',
+                \ 'bash'     : '',
+                \ 'zsh'      : '',
+                \ '.zlogin'  : '',
+                \ 'zshenv'   : '',
+                \ 'zz'       : '',
                 \ 'ksh'      : '',
                 \ 'csh'      : '',
                 \ 'awk'      : '',
@@ -225,6 +229,8 @@ scriptencoding utf-8
                 \ 'snippets' : '',
                 \ 'ml'       : 'λ',
                 \ 'mli'      : 'λ',
+                \ 'scm'      : 'λ',
+                  "\ scheme经常用lambda 表达式?, https://people.eecs.berkeley.edu/~bh/ssch9/lambda.html
                 \ 'diff'     : '',
                 \ 'db'       : '',
                 \ 'sql'      : '',
@@ -281,7 +287,7 @@ scriptencoding utf-8
                 \ 'pem'         :'',
                 \ 'ahk'         :'',
                 \ 'autohotkey'  :'',
-                \ 'w'           :'📁',
+                \ 'w'           :'🗀',
                 \ 'man'         :'👤',
                 \ 'txt'         :'📄',
                 \}
@@ -317,9 +323,9 @@ scriptencoding utf-8
                 \ '.gitattributes'                   : '',
                 \ '.gitlab-ci.yml'                   : '',
                 \ '.bashrc'                          : '',
-                \ '.zshrc'                           : '',
-                \ '.zshenv'                          : '',
-                \ '.zprofile'                        : '',
+                \ '.zshrc'                           : '',
+                \ '.zshenv'                          : '',
+                \ '.zprofile'                        : '',
                 \ '.vimrc'                           : '',
                 \ '.gvimrc'                          : '',
                 \ '_vimrc'                           : '',

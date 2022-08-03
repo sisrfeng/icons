@@ -110,7 +110,7 @@ s:initialize	plugin/webdevicons.vim	/^        fun! s:initialize()$/;"	f
 s:isDarwin	plugin/webdevicons.vim	/^    function s:isDarwin()$/;"	f
 s:plugin_home	plugin/webdevicons.vim	/^let s:plugin_home = expand('<sfile>:p:h:h')$/;"	v
 s:save_cpo	autoload/vimfiler/columns/devicons.vim	/^let s:save_cpo = &cpo$/;"	v
-s:save_cpo	plugin/webdevicons.vim	/^    let s:save_cpo = &cpo$/;"	v
+s:save_cpo	plugin/webdevicons.vim	/^    let s:save_cpo = &cpo  | set cpo&vim$/;"	v
 s:set	plugin/webdevicons.vim	/^    fun! s:set(var, default) abort$/;"	f
 s:setCursorHold	plugin/webdevicons.vim	/^            fun! s:setCursorHold()$/;"	f
 s:setDictionaries	plugin/webdevicons.vim	/^    fun! s:setDictionaries()$/;"	f
