@@ -349,7 +349,7 @@ Should work "out of the box", no particular configuration should be needed.
 Lightline Setup
 
 To add the appropriate icon to lightline [7], call the function
-'File_Icon()' and/or 'WebDevIconsGetFileFormatSymbol()' in
+'File_Icon()' and/or 'Icons_GetFileFormatSymbol()' in
 your '.vimrc'. For example, you could set your sections to:
 
   let g:lightline = {
@@ -364,21 +364,18 @@ your '.vimrc'. For example, you could set your sections to:
   endfunction
 
   function! MyFileformat()
-    return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+    return winwidth(0) > 70 ? (&fileformat . ' ' . Icons_GetFileFormatSymbol()) : ''
   endfunction
 
 -------------------------------------------------------------------------------
 *devicons-powerline-setup*
 Powerline Setup
 
-- _Note this is for the current Powerline [4] not the deprecated vim-
-  powerline [43]_
+- _Note this is for the current Powerline [4] not the deprecated vim-  powerline [43]_
 
-To enable for Powerline [4] some |vimrc| and powerline configuration changes
-are needed:
+To enable for Powerline [4] some |vimrc| and powerline configuration changes  are needed:
 
-|vimrc| changes (only required if you don't already have powerline setup for
-vim):
+|vimrc| changes (only required if you don't already have powerline setup for  vim):
 
   set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 
@@ -553,13 +550,14 @@ Extra Configuration
 
 
   " turn on/off file node glyph decorations (not particularly useful)
-  let g:WebDevIconsUnicodeDecorateFileNodes = 1
+  let g:Icons_UnicodeDecorateFileNodes = 1
 
 
 
   " use double-width(1) or single-width(0) glyphs
-  " only manipulates padding, has no effect on terminal or set(guifont) font
-  let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
+  " only manipulates padding,
+  " has no effect on terminal or set(guifont) font
+  let g:Icons_UnicodeGlyphDoubleWidth = 1
 
 
 
@@ -569,12 +567,12 @@ Extra Configuration
 
 
   " the amount of space to use after the glyph character (default ' ')
-  let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
+  let g:Icons_NerdTreeAfterGlyphPadding = '  '
 
 
 
   " Force extra padding in NERDTree so that the filetype icons line up vertically
-  let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
+  let g:Icons_NerdTreeGitPluginForceVAlign = 1
 
 
 
@@ -585,13 +583,13 @@ Extra Configuration
 
   " the amount of space to use after the glyph character in vim-airline
 	tabline(default '')
-  let g:WebDevIconsTabAirLineAfterGlyphPadding = ' '
+  let g:Icons_TabAirLineAfterGlyphPadding = ' '
 
 
 
   " the amount of space to use before the glyph character in vim-airline
 	tabline(default ' ')
-  let g:WebDevIconsTabAirLineBeforeGlyphPadding = ' '
+  let g:Icons_TabAirLineBeforeGlyphPadding = ' '
 
 -------------------------------------------------------------------------------
 *devicons-character-mappings*
@@ -601,49 +599,49 @@ Character Mappings
   want to use
 
   " change the default character when no match found
-  let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol = 'ƛ'
+  let g:Icons_UnicodeDecorateFileNodesDefaultSymbol = 'ƛ'
 
 
 
   " set a byte character marker (BOM) utf-8 symbol when retrieving file encoding
   " disabled by default with no value
-  let g:WebDevIconsUnicodeByteOrderMarkerDefaultSymbol = ''
+  let g:Icons_UnicodeByteOrderMarkerDefaultSymbol = ''
 
 
 
   " enable folder/directory glyph flag (disabled by default with 0)
-  let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+  let g:Icons_UnicodeDecorateFolderNodes = 1
 
 
 
   " enable open and close folder/directory glyph flags (disabled by default with 0)
-  let g:DevIconsEnableFoldersOpenClose = 1
+  let g:Icons__FoldersOpenClose = 1
 
 
 
   " enable pattern matching glyphs on folder/directory (enabled by default with 1)
-  let g:DevIconsEnableFolderPatternMatching = 1
+  let g:Icons__FolderPatternMatching = 1
 
 
 
   " enable file extension pattern matching glyphs on folder/directory (disabled by default with 0)
-  let g:DevIconsEnableFolderExtensionPatternMatching = 0
+  let g:Icons__FolderExtensionPatternMatching = 0
 
 
 
   " disable showing the distribution for unix file encoding (enabled by default with 1)
-  let g:DevIconsEnableDistro = 0
+  let g:Icons__Distro = 0
 
 
 
   " enable custom folder/directory glyph exact matching
-  " (enabled by default when g:WebDevIconsUnicodeDecorateFolderNodes is set to 1)
-  let WebDevIconsUnicodeDecorateFolderNodesExactMatches = 1
+  " (enabled by default when g:Icons_UnicodeDecorateFolderNodes is set to 1)
+  let Icons_UnicodeDecorateFolderNodesExactMatches = 1
 
 
 
   " change the default folder/directory glyph/icon
-  let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = 'ƛ'
+  let g:Icons_UnicodeDecorateFolderNodesDefaultSymbol = 'ƛ'
 
 
 
@@ -654,36 +652,36 @@ Character Mappings
 
   " change the default dictionary mappings for file extension matches
 
-  let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {} " needed
-  let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['js'] = 'ƛ'
+  let g:Icons_UnicodeDecorateFileNodesExtensionSymbols = {} " needed
+  let g:Icons_UnicodeDecorateFileNodesExtensionSymbols['js'] = 'ƛ'
 
 
 
   " change the default dictionary mappings for exact file node matches
 
-  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols = {} " needed
-  let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['MyReallyCoolFile.okay'] = 'ƛ'
+  let g:Icons_UnicodeDecorateFileNodesExactSymbols = {} " needed
+  let g:Icons_UnicodeDecorateFileNodesExactSymbols['MyReallyCoolFile.okay'] = 'ƛ'
 
 
 
   " add or override individual additional filetypes
 
-  let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {} " needed
-  let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['myext'] = 'ƛ'
+  let g:Icons_UnicodeDecorateFileNodesExtensionSymbols = {} " needed
+  let g:Icons_UnicodeDecorateFileNodesExtensionSymbols['myext'] = 'ƛ'
 
 
 
   " add or override pattern matches for filetypes
   " these take precedence over the file extensions
 
-  let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols = {} " needed
-  let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['.*jquery.*\.js$'] = 'ƛ'
+  let g:Icons_UnicodeDecorateFileNodesPatternSymbols = {} " needed
+  let g:Icons_UnicodeDecorateFileNodesPatternSymbols['.*jquery.*\.js$'] = 'ƛ'
 
 specify OS to decide an icon for unix fileformat (_not_ defined by default) -
 this is useful for avoiding unnecessary 'system()' call. see #135 [48] for
 further details.
 
-  let g:WebDevIconsOS = 'Darwin'
+  let g:Icons_OS = 'Darwin'
 
 -------------------------------------------------------------------------------
 *devicons-api*
@@ -697,15 +695,11 @@ API
 
   " returns the font character that represents
   " the file format as an icon (windows, linux, mac)
-  WebDevIconsGetFileFormatSymbol()
+  Icons_GetFileFormatSymbol()
 
 -------------------------------------------------------------------------------
 *devicons-public-methods*
 Public Methods
-
-  " Returns the current version of the plugin
-  icon_wf#version()
-
 
 
   " Calls icon_wf#softRefresh()
@@ -740,7 +734,7 @@ Custom vim status line (not relying on vim-airline or lightline):
 *devicons-simple-function-call*
 Simple function call
 
-  echo WebDevIconsGetFileFormatSymbol()
+  echo Icons_GetFileFormatSymbol()
 
 -------------------------------------------------------------------------------
                                       *devicons-integration-with-other-plugins*
@@ -819,7 +813,7 @@ Why isn't it working? How come I don't see any icons?
 
 - check if you are able to see the characters, from ex mode:
 
-  'vim :echo g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol'
+  'vim :echo g:Icons_UnicodeDecorateFileNodesDefaultSymbol'
 
 - if all this looks correct you may try this to see if any files show flags
 
@@ -827,7 +821,7 @@ Why isn't it working? How come I don't see any icons?
     display anywhere (NERDTree, vim-airline's statusline, vim-airlines's
     tabline), from ex mode:
 
-  "vim :let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol='x'"
+  "vim :let g:Icons_UnicodeDecorateFileNodesDefaultSymbol='x'"
 
 -------------------------------------------------------------------------------
        *devicons-how-did-you-get-color-matching-based-on-file-type-in-nerdtree*

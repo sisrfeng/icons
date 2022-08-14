@@ -1,10 +1,3 @@
-if "wf_package":
-    import os       ; wf_home = os.path.expanduser("~/")
-    import sys      ; sys.path.append(wf_home)
-    import warnings ; warnings.filterwarnings("ignore")
-    from  dotF.leo_common.leo_base   import *
-
-
 # -*- coding: utf-8 -*-
 # vim:se fenc=utf8 noet:
 from __future__ import (unicode_literals, division, absolute_import, print_function)
@@ -28,7 +21,7 @@ def icon_wf(pl, segment_info):
 
 @requires_segment_info
 def icon_wf_file_format(pl, segment_info):
-	icon_wf_file_format = vim_get_func('WebDevIconsGetFileFormatSymbol')
+	icon_wf_file_format = vim_get_func('Icons_GetFileFormatSymbol')
 	return [] if not icon_wf_file_format else [{
 		'contents': icon_wf_file_format(),
 		'highlight_groups': ['icon_wf_file_format', 'file_format'],

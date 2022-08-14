@@ -1,75 +1,60 @@
 " Version: 0.11.0
 "  https://github.com/ryanoasis/vim-devicons
 
-let s:version = '0.11.0'
-let s:plugin_home = expand('<sfile>:p:h:h')
-
-" set scriptencoding after 'encoding' and when using multibyte chars
 scriptencoding utf-8
 
-" standard fix/safety
-    let s:save_cpo = &cpo  | set cpo&vim
+let s:save_cpo = &cpo  | set cpo&vim
+if exists('g:loaded_icon_wf')  | finish  | en | let g:loaded_icon_wf = 1
 
-    if exists('g:loaded_icon_wf')  | finish  | en
-
-    let g:loaded_icon_wf = 1
-
-" config enable / disable settings
-    " only if variable is not defined.
-        " Set the variable to the default value,
+" enable / disable settings
+    "\ only if variable is not defined,
+        " set the variable to the default value,
     "
     " @param {string} var Variable name with its scope.
     " @param {*} default Default value for variable.
-    ""
     fun! s:set(var, default) abort
         if !exists(a:var)
             if type(a:default)
                 exe     'let' a:var '=' string(a:default)
             el
                 exe     'let' a:var '=' a:default
+                                      "\ type为number
             en
         en
     endf
 
     call s:set('g:icon_wf_enable'                                        , 1)
     call s:set('g:icon_wf_enable_nerdtree'                               , 1)
-    call s:set('g:icon_wf_enable_unite '                                 , 1)
     call s:set('g:icon_wf_enable_denite'                                 , 1)
-    call s:set('g:icon_wf_enable_vimfiler'                               , 1)
-    call s:set('g:icon_wf_enable_ctrlp'                                  , 1)
-    call s:set('g:icon_wf_enable_airline_tabline'                        , 1)
-    call s:set('g:icon_wf_enable_airline_statusline'                     , 1)
-    call s:set('g:icon_wf_enable_airline_statusline_fileformat_symbols'  , 1)
-    call s:set('g:icon_wf_enable_flagship_statusline'                    , 1)
-    call s:set('g:icon_wf_enable_flagship_statusline_fileformat_symbols' , 1)
     call s:set('g:icon_wf_enable_startify'                               , 1)
     call s:set('g:icon_wf_conceal_nerdtree_brackets'                     , 1)
-    call s:set('g:DevIconsAppendArtifactFix'                                 , has('gui_running') ? 1 : 0)
+    call s:set('g:DevIconsAppendArtifactFix'          , has('gui_running') ? 1 : 0)
     call s:set('g:DevIconsArtifactFixChar'                                   , ' ')
 
 " config options
-    call s:set('g:WebDevIconsUnicodeDecorateFileNodes'               , 1)
-    call s:set('g:WebDevIconsUnicodeDecorateFolderNodes'             , 1)
-    call s:set('g:DevIconsEnableFoldersOpenClose'                    , 0)
-    call s:set('g:DevIconsEnableFolderPatternMatching'               , 1)
-    call s:set('g:DevIconsEnableFolderExtensionPatternMatching'      , 0)
-    call s:set('g:DevIconsEnableDistro'                              , 1)
-    call s:set('g:WebDevIconsUnicodeDecorateFolderNodesExactMatches' , 1)
-    call s:set('g:WebDevIconsUnicodeGlyphDoubleWidth'                , 1)
-    call s:set('g:WebDevIconsNerdTreeBeforeGlyphPadding'             , ' ')
-    call s:set('g:WebDevIconsNerdTreeAfterGlyphPadding'              , ' ')
-    call s:set('g:WebDevIconsNerdTreeGitPluginForceVAlign'           , 1)
+    call s:set('g:Icons_UnicodeDecorateFileNodes'               , 1)
+    call s:set('g:Icons_UnicodeDecorateFolderNodes'             , 1)
+
+    call s:set('g:Icons__FoldersOpenClose'                    , 0)
+    call s:set('g:Icons__FolderPatternMatching'               , 1)
+    call s:set('g:Icons__FolderExtensionPatternMatching'      , 0)
+    call s:set('g:Icons__Distro'                              , 1)
+    call s:set('g:Icons_UnicodeDecorateFolderNodesExactMatches' , 1)
+    call s:set('g:Icons_UnicodeGlyphDoubleWidth'                , 1)
+    call s:set('g:Icons_NerdTreeBeforeGlyphPadding'             , ' ')
+    call s:set('g:Icons_NerdTreeAfterGlyphPadding'              , ' ')
+    call s:set('g:Icons_NerdTreeGitPluginForceVAlign'           , 1)
     call s:set('g:NERDTreeUpdateOnCursorHold'                        , 1) " Obsolete: For backward compatibility
     call s:set('g:NERDTreeGitStatusUpdateOnCursorHold'               , 1)
-    call s:set('g:WebDevIconsTabAirLineBeforeGlyphPadding'           , ' ')
-    call s:set('g:WebDevIconsTabAirLineAfterGlyphPadding'            , '')
+    call s:set('g:Icons_TabAirLineBeforeGlyphPadding'           , ' ')
+    call s:set('g:Icons_TabAirLineAfterGlyphPadding'            , '')
 
 
-    call s:set('g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol'   , '')
-    call s:set('g:WebDevIconsUnicodeByteOrderMarkerDefaultSymbol'     , '')
+    call s:set('g:Icons_UnicodeDecorateFileNodesDefaultSymbol'   , '')
+    call s:set('g:Icons_UnicodeByteOrderMarkerDefaultSymbol'     , '')
     call s:set('g:DevIconsDefaultFolderOpenSymbol'                    , '')
-    call s:set('g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol' , g:DevIconsEnableFoldersOpenClose ? '' : '')
-    call s:set('g:WebDevIconsUnicodeDecorateFolderNodesSymlinkSymbol' , '')
+    call s:set('g:Icons_UnicodeDecorateFolderNodesDefaultSymbol' , g:Icons__FoldersOpenClose ? '' : '')
+    call s:set('g:Icons_UnicodeDecorateFolderNodesSymlinkSymbol' , '')
 
 " local functions
     function s:getDistro()
@@ -82,7 +67,7 @@ scriptencoding utf-8
             return s:distro
         en
 
-        if g:DevIconsEnableDistro && executable('lsb_release')
+        if g:Icons__Distro && executable('lsb_release')
             let s:lsb = system('lsb_release -i')
             if s:lsb =~# 'Arch'
                 let s:distro = ''
@@ -111,8 +96,8 @@ scriptencoding utf-8
             return s:is_darwin
         en
 
-        if exists('g:WebDevIconsOS')
-            let s:is_darwin = g:WebDevIconsOS ==? 'Darwin'
+        if exists('g:Icons_OS')
+            let s:is_darwin = g:Icons_OS ==? 'Darwin'
             return s:is_darwin
         en
 
@@ -292,15 +277,15 @@ scriptencoding utf-8
                 \ 'txt'         :'📄',
                 \}
 
-            if !exists('g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols')
-                let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
+            if !exists('g:Icons_UnicodeDecorateFileNodesExtensionSymbols')
+                let g:Icons_UnicodeDecorateFileNodesExtensionSymbols = {}
             en
 
             "  allow user overriding of ¿specific individual keys ¿in vimrc
             " (only gvimrc was working previously)
             for [key, val] in items(s:file_node_extensions)
-                if !has_key(g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols, key)
-                    let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols[key] = val
+                if !has_key(g:Icons_UnicodeDecorateFileNodesExtensionSymbols, key)
+                    let g:Icons_UnicodeDecorateFileNodesExtensionSymbols[key] = val
                 en
             endfor
 
@@ -347,14 +332,14 @@ scriptencoding utf-8
                 \ 'zathurarc'                        : ''
                 \}
 
-            if !exists('g:WebDevIconsUnicodeDecorateFileNodesExactSymbols')
+            if !exists('g:Icons_UnicodeDecorateFileNodesExactSymbols')
                 " do not remove: exact-match-case-sensitive-*
-                let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols = {}
+                let g:Icons_UnicodeDecorateFileNodesExactSymbols = {}
             en
 
             for [key, val] in items(s:file_node_exact_matches)
-            if !has_key(g:WebDevIconsUnicodeDecorateFileNodesExactSymbols, key)
-                let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols[key] = val
+            if !has_key(g:Icons_UnicodeDecorateFileNodesExactSymbols, key)
+                let g:Icons_UnicodeDecorateFileNodesExactSymbols[key] = val
             en
             endfor
 
@@ -373,14 +358,14 @@ scriptencoding utf-8
                 \ 'Vagrantfile$'          : ''
                 \}
 
-            if !exists('g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols')
-                let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols = {}
+            if !exists('g:Icons_UnicodeDecorateFileNodesPatternSymbols')
+                let g:Icons_UnicodeDecorateFileNodesPatternSymbols = {}
             en
 
 
             for [key, val] in items(s:file_node_pattern_matches)
-                if !has_key(g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols, key)
-                    let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols[key] = val
+                if !has_key(g:Icons_UnicodeDecorateFileNodesPatternSymbols, key)
+                    let g:Icons_UnicodeDecorateFileNodesPatternSymbols[key] = val
                 en
             endfor
     endf
@@ -462,20 +447,12 @@ scriptencoding utf-8
             if exists('g:loaded_flagship') | call devicons#plugins#flagship#init() | endif
             if exists('g:loaded_unite') && g:icon_wf_enable_unite | call devicons#plugins#unite#init() | endif
             if exists('g:loaded_denite') && g:icon_wf_enable_denite | call devicons#plugins#denite#init() | endif
-            if exists('g:loaded_vimfiler') && g:icon_wf_enable_vimfiler | call devicons#plugins#vimfiler#init() | endif
-            if exists('g:loaded_ctrlp') && g:icon_wf_enable_ctrlp | call devicons#plugins#ctrlp#init() | endif
             if exists('g:loaded_startify') && g:icon_wf_enable_startify | call devicons#plugins#startify#init() | endif
         endf
 
 
 " public functions
-    fun! icon_wf#version()
-        return s:version
-    endf
 
-    fun! icon_wf#pluginHome()
-        return s:plugin_home
-    endf
 
     " allow the first version of refresh to now call softRefresh
     fun! icon_wf#refresh()
@@ -508,31 +485,31 @@ scriptencoding utf-8
         en
         en
 
-        if isDirectory == 0 || g:DevIconsEnableFolderPatternMatching
+        if isDirectory == 0 || g:Icons__FolderPatternMatching
 
-        let symbol = g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol
+        let symbol = g:Icons_UnicodeDecorateFileNodesDefaultSymbol
         let fileNodeExtension = tolower(fileNodeExtension)
         let fileNode = tolower(fileNode)
 
-        for [pattern, glyph] in items(g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols)
+        for [pattern, glyph] in items(g:Icons_UnicodeDecorateFileNodesPatternSymbols)
             if match(fileNode, pattern) != -1
             let symbol = glyph
             break
             en
         endfor
 
-        if symbol == g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol
-            if has_key(g:WebDevIconsUnicodeDecorateFileNodesExactSymbols, fileNode)
-            let symbol = g:WebDevIconsUnicodeDecorateFileNodesExactSymbols[fileNode]
-            elseif ((isDirectory == 1 && g:DevIconsEnableFolderExtensionPatternMatching) || isDirectory == 0) && has_key(g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols, fileNodeExtension)
-            let symbol = g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols[fileNodeExtension]
+        if symbol == g:Icons_UnicodeDecorateFileNodesDefaultSymbol
+            if has_key(g:Icons_UnicodeDecorateFileNodesExactSymbols, fileNode)
+            let symbol = g:Icons_UnicodeDecorateFileNodesExactSymbols[fileNode]
+            elseif ((isDirectory == 1 && g:Icons__FolderExtensionPatternMatching) || isDirectory == 0) && has_key(g:Icons_UnicodeDecorateFileNodesExtensionSymbols, fileNodeExtension)
+            let symbol = g:Icons_UnicodeDecorateFileNodesExtensionSymbols[fileNodeExtension]
             elseif isDirectory == 1
-            let symbol = g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol
+            let symbol = g:Icons_UnicodeDecorateFolderNodesDefaultSymbol
             en
         en
 
         el
-        let symbol = g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol
+        let symbol = g:Icons_UnicodeDecorateFolderNodesDefaultSymbol
         en
 
         let artifactFix = s:DevIconsGetArtifactFix()
@@ -542,7 +519,8 @@ scriptencoding utf-8
     endf
 
     " scope: local
-    " Temporary (hopefully) fix for glyph issues in gvim (proper fix is with the  actual font patcher)
+    " Temporary (hopefully) fix for glyph issues in gvim
+    " (proper fix is with the  actual font patcher)
     fun! s:DevIconsGetArtifactFix()
         if g:DevIconsAppendArtifactFix == 1
         let artifactFix = g:DevIconsArtifactFixChar
@@ -553,12 +531,12 @@ scriptencoding utf-8
         return artifactFix
     endf
 
-    fun! WebDevIconsGetFileFormatSymbol(...)
+    fun! Icons_GetFileFormatSymbol(...)
         let fileformat = ''
         let bomb = ''
 
-        if (&bomb && g:WebDevIconsUnicodeByteOrderMarkerDefaultSymbol !=? '')
-        let bomb = g:WebDevIconsUnicodeByteOrderMarkerDefaultSymbol . ' '
+        if (&bomb && g:Icons_UnicodeByteOrderMarkerDefaultSymbol !=? '')
+        let bomb = g:Icons_UnicodeByteOrderMarkerDefaultSymbol . ' '
         en
 
         if &fileformat ==? 'dos'
@@ -574,39 +552,18 @@ scriptencoding utf-8
         return bomb . fileformat . artifactFix
     endf
 
-    " for airline plugin
-        " scope: public
-        fun! AirlineWebDevIcons(...)
-            let w:airline_section_x = get(w:, 'airline_section_x',
-                \ get(g:, 'airline_section_x', ''))
-            let w:airline_section_x .= ' %{File_Icon()} '
-            let hasFileFormatEncodingPart = airline#parts#ffenc() !=? ''
-            if g:icon_wf_enable_airline_statusline_fileformat_symbols && hasFileFormatEncodingPart
-            let w:airline_section_y = ' %{&fenc . " " . WebDevIconsGetFileFormatSymbol()} '
-            en
-        endf
-
-        if g:icon_wf_enable == 1 && exists('g:loaded_airline') && g:loaded_airline == 1 && g:icon_wf_enable_airline_statusline
-            call airline#add_statusline_func('AirlineWebDevIcons')
-        en
-
-        if g:icon_wf_enable == 1 && g:icon_wf_enable_airline_tabline
-            " Store original formatter.
-            let g:_icon_wf_airline_orig_formatter = get(g:, 'airline#extensions#tabline#formatter', 'default')
-            let g:airline#extensions#tabline#formatter = 'icon_wf'
-        en
 
     " for nerdtree plugin
-        fun! NERDTreeWebDevIconsRefreshListener(event)
+        fun! NERDTreeIcons_RefreshListener(event)
             let path = a:event.subject
-            let postPadding = g:WebDevIconsNerdTreeAfterGlyphPadding
-            let prePadding = g:WebDevIconsNerdTreeBeforeGlyphPadding
+            let postPadding = g:Icons_NerdTreeAfterGlyphPadding
+            let prePadding = g:Icons_NerdTreeBeforeGlyphPadding
             let hasGitFlags = (len(path.flagSet._flagsForScope('git')) > 0)
             let hasGitNerdTreePlugin = (exists('g:loaded_nerdtree_git_status') == 1)
             let artifactFix = s:DevIconsGetArtifactFix()
 
             " align vertically at the same level: non git-flag nodes with git-flag nodes
-            if g:WebDevIconsNerdTreeGitPluginForceVAlign && !hasGitFlags && hasGitNerdTreePlugin
+            if g:Icons_NerdTreeGitPluginForceVAlign && !hasGitFlags && hasGitNerdTreePlugin
                 let prePadding .= ' '
             en
 
@@ -614,11 +571,11 @@ scriptencoding utf-8
                 " Hey we got a regular file, lets get it's proper icon
                 let flag = prePadding . File_Icon(path.str()) . postPadding
 
-            elseif path.isDirectory && g:WebDevIconsUnicodeDecorateFolderNodes == 1
+            elseif path.isDirectory && g:Icons_UnicodeDecorateFolderNodes == 1
                 " Ok we got a directory, some more tests and checks
                 let directoryOpened = 0
 
-                if g:DevIconsEnableFoldersOpenClose && len(path.flagSet._flagsForScope('icon_wf')) > 0
+                if g:Icons__FoldersOpenClose && len(path.flagSet._flagsForScope('icon_wf')) > 0
                     " did the user set different icons for open and close?
 
                     " isOpen is not available on the path listener directly
@@ -628,17 +585,17 @@ scriptencoding utf-8
                     en
                 en
 
-                if g:WebDevIconsUnicodeDecorateFolderNodesExactMatches == 1
+                if g:Icons_UnicodeDecorateFolderNodesExactMatches == 1
                     " Did the user enable exact matching of folder type/names
                     " think node_modules
-                    if g:DevIconsEnableFoldersOpenClose && directoryOpened
+                    if g:Icons__FoldersOpenClose && directoryOpened
                         " the folder is open
                         let flag = prePadding . g:DevIconsDefaultFolderOpenSymbol . artifactFix . postPadding
                     el
                         " the folder is not open
                         if path.isSymLink
                             " We have a symlink
-                            let flag = prePadding . g:WebDevIconsUnicodeDecorateFolderNodesSymlinkSymbol . artifactFix . postPadding
+                            let flag = prePadding . g:Icons_UnicodeDecorateFolderNodesSymlinkSymbol . artifactFix . postPadding
                         el
                             " We have a regular folder
                             let flag = prePadding . File_Icon(path.str(), path.isDirectory) . postPadding
@@ -647,17 +604,17 @@ scriptencoding utf-8
 
                 el
                     " the user did not enable exact matching
-                    if g:DevIconsEnableFoldersOpenClose && directoryOpened
+                    if g:Icons__FoldersOpenClose && directoryOpened
                         " the folder is open
                         let flag = prePadding . g:DevIconsDefaultFolderOpenSymbol . artifactFix . postPadding
                     el
                         " the folder is not open
                         if path.isSymLink
                             " We have a symlink
-                            let flag = prePadding . g:WebDevIconsUnicodeDecorateFolderNodesSymlinkSymbol . artifactFix . postPadding
+                            let flag = prePadding . g:Icons_UnicodeDecorateFolderNodesSymlinkSymbol . artifactFix . postPadding
                         el
                             " We have a regular folder
-                            let flag = prePadding . g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol . artifactFix . postPadding
+                            let flag = prePadding . g:Icons_UnicodeDecorateFolderNodesDefaultSymbol . artifactFix . postPadding
                         en
                     en
 
@@ -679,6 +636,5 @@ scriptencoding utf-8
 " had some issues with ¿VimEnter,¿ for now using :
     call s:initialize()
 
-let &cpo = s:save_cpo
-unlet s:save_cpo
+let &cpo = s:save_cpo  | unlet s:save_cpo
 
