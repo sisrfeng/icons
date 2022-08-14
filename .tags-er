@@ -50,14 +50,14 @@ __init__	rplugin/python3/denite/filter/devicons_denite_converter.py	/^	def __ini
 devicons#plugins#denite#init	autoload/devicons/plugins/denite.vim	/^function! devicons#plugins#denite#init() abort$/;"	f
 devicons#plugins#startify#init	autoload/devicons/plugins/startify.vim	/^function! devicons#plugins#startify#init() abort$/;"	f
 filter	rplugin/python3/denite/filter/devicons_denite_converter.py	/^	def filter(self, context):$/;"	m	class:Filter
-g:Icons_UnicodeDecorateFileNodesExactSymbols	plugin/icon_wf.vim	/^                let g:Icons_UnicodeDecorateFileNodesExactSymbols = {}$/;"	v
-g:Icons_UnicodeDecorateFileNodesExactSymbols	plugin/icon_wf.vim	/^                let g:Icons_UnicodeDecorateFileNodesExactSymbols[key] = val$/;"	v
-g:Icons_UnicodeDecorateFileNodesExtensionSymbols	plugin/icon_wf.vim	/^                    let g:Icons_UnicodeDecorateFileNodesExtensionSymbols[key] = val$/;"	v
-g:Icons_UnicodeDecorateFileNodesExtensionSymbols	plugin/icon_wf.vim	/^                let g:Icons_UnicodeDecorateFileNodesExtensionSymbols = {}$/;"	v
-g:Icons_UnicodeDecorateFileNodesPatternSymbols	plugin/icon_wf.vim	/^                    let g:Icons_UnicodeDecorateFileNodesPatternSymbols[key] = val$/;"	v
-g:Icons_UnicodeDecorateFileNodesPatternSymbols	plugin/icon_wf.vim	/^                let g:Icons_UnicodeDecorateFileNodesPatternSymbols = {}$/;"	v
 g:Icons__NERDTreeRedraw	nerdtree_plugin/webdevicons.vim	/^        let g:Icons__NERDTreeRedraw = 0$/;"	v
 g:Icons__NERDTreeRedraw	nerdtree_plugin/webdevicons.vim	/^        let g:Icons__NERDTreeRedraw = 1$/;"	v
+g:Icons_utf_DecorateFileNodesExactSymbols	plugin/icon_wf.vim	/^                let g:Icons_utf_DecorateFileNodesExactSymbols = {}$/;"	v
+g:Icons_utf_DecorateFileNodesExactSymbols	plugin/icon_wf.vim	/^                let g:Icons_utf_DecorateFileNodesExactSymbols[key] = val$/;"	v
+g:Icons_utf_DecorateFileNodesExtensionSymbols	plugin/icon_wf.vim	/^                    let g:Icons_utf_DecorateFileNodesExtensionSymbols[key] = val$/;"	v
+g:Icons_utf_DecorateFileNodesExtensionSymbols	plugin/icon_wf.vim	/^                let g:Icons_utf_DecorateFileNodesExtensionSymbols = {}$/;"	v
+g:Icons_utf_DecorateFileNodesPatternSymbols	plugin/icon_wf.vim	/^                    let g:Icons_utf_DecorateFileNodesPatternSymbols[key] = val$/;"	v
+g:Icons_utf_DecorateFileNodesPatternSymbols	plugin/icon_wf.vim	/^                let g:Icons_utf_DecorateFileNodesPatternSymbols = {}$/;"	v
 g:icon_wf_enable_nerdtree	nerdtree_plugin/webdevicons.vim	/^         let g:icon_wf_enable_nerdtree = 0$/;"	v
 g:icon_wf_gui_glyph_fix	nerdtree_plugin/webdevicons.vim	/^        let g:icon_wf_gui_glyph_fix = 0$/;"	v
 g:icon_wf_gui_glyph_fix	nerdtree_plugin/webdevicons.vim	/^        let g:icon_wf_gui_glyph_fix = 1$/;"	v
@@ -69,7 +69,7 @@ icon_wf_conceal_nerdtree_brackets	plugin/icon_wf.vim	/^        augroup icon_wf_c
 icon_wf_cursor_hold	plugin/icon_wf.vim	/^                augroup icon_wf_cursor_hold$/;"	a
 icon_wf_file_format	pythonx/vim_devicons/powerline/segments.py	/^def icon_wf_file_format(pl, segment_info):$/;"	f
 s:CursorHoldUpdate	plugin/icon_wf.vim	/^            fun! s:CursorHoldUpdate()$/;"	f
-s:DevIconsGetArtifactFix	plugin/icon_wf.vim	/^    fun! s:DevIconsGetArtifactFix()$/;"	f
+s:Icons__GetArtifactFix	plugin/icon_wf.vim	/^    fun! s:Icons__GetArtifactFix()$/;"	f
 s:Refresh	nerdtree_plugin/webdevicons.vim	/^fun! s:Refresh()$/;"	f
 s:SetupListeners	nerdtree_plugin/webdevicons.vim	/^fun! s:SetupListeners()$/;"	f
 s:getDistro	plugin/icon_wf.vim	/^    function s:getDistro()$/;"	f

@@ -16,7 +16,7 @@ Contents
  8. License                                                  |devicons-license|
  9. Detailed Installation                      |devicons-detailed-installation|
   1. Step 1 'Nerd Font'                                             |Nerd-Font|
-  2. Step 2 'VimDevIcons Plugin'                           |VimDevIcons-Plugin|
+  2. Step 2 'VimIconS_ Plugin'                           |VimIconS_-Plugin|
    1. Pathogen [38]                                      |devicons-pathogen-38|
    2. NeoBundle [39]                                    |devicons-neobundle-39|
    3. Vundle [40]                                          |devicons-vundle-40|
@@ -70,7 +70,7 @@ Introduction
   | |/ / / / / / / / /_/ /  __| |/ _/ // /__/ /_/ / / / (__  )
   |___/_/_/ /_/ /_/_____/\___/|___/___/\___/\____/_/ /_/____/
 
-**VimDevIcons**
+**VimIconS_**
 
 Adds Icons to Your Plugins
 
@@ -193,10 +193,10 @@ Step 1 'Nerd Font'
 Get a **Nerd Font!** [16] or patch your own. [17] Without this, things break
 
 -------------------------------------------------------------------------------
-*VimDevIcons-Plugin*
-Step 2 'VimDevIcons Plugin'
+*VimIconS_-Plugin*
+Step 2 'VimIconS_ Plugin'
 
-**Set VimDevIcons to load _after_ these plugins!**
+**Set VimIconS_ to load _after_ these plugins!**
 
 NERDTree [1] | vim-airline [2] | CtrlP [3] | powerline [4] | Denite [5] | unite
 [6] | lightline.vim [7] | vim-startify [8] | vimfiler [9] | flagship [11]
@@ -260,9 +260,9 @@ supported plugins!
 airline [2], CtrlP [3], powerline [4], Denite [5], unite [6], vimfiler [9],
 flagship [11] you **must** configure vim to load those plugins__before_ vim-
 devicons loads. for better nerdtree-git-plugin [26] support, you _should_
-configure vim to load nerdtree-git-plugin **_before_** VimDevIcons loads. * if
+configure vim to load nerdtree-git-plugin **_before_** VimIconS_ loads. * if
 you are lazy loading Denite [5] using the Dein plugin manager, you will need to
-source VimDevIcons before Denite loads.
+source VimIconS_ before Denite loads.
 
 Lightline Setup and Powerline Setup require some extra setup as shown below:
 
@@ -550,14 +550,14 @@ Extra Configuration
 
 
   " turn on/off file node glyph decorations (not particularly useful)
-  let g:Icons_UnicodeDecorateFileNodes = 1
+  let g:Icons_utf_DecorateFileNodes = 1
 
 
 
   " use double-width(1) or single-width(0) glyphs
   " only manipulates padding,
   " has no effect on terminal or set(guifont) font
-  let g:Icons_UnicodeGlyphDoubleWidth = 1
+  let g:Icons_utf_GlyphDoubleWidth = 1
 
 
 
@@ -599,18 +599,18 @@ Character Mappings
   want to use
 
   " change the default character when no match found
-  let g:Icons_UnicodeDecorateFileNodesDefaultSymbol = 'ƛ'
+  let g:Icons_utf_DecorateFileNodesDefaultSymbol = 'ƛ'
 
 
 
   " set a byte character marker (BOM) utf-8 symbol when retrieving file encoding
   " disabled by default with no value
-  let g:Icons_UnicodeByteOrderMarkerDefaultSymbol = ''
+  let g:Icons_utf_ByteOrderMarkerDefaultSymbol = ''
 
 
 
   " enable folder/directory glyph flag (disabled by default with 0)
-  let g:Icons_UnicodeDecorateFolderNodes = 1
+  let g:Icons_utf_DecorateFolderNodes = 1
 
 
 
@@ -635,47 +635,47 @@ Character Mappings
 
 
   " enable custom folder/directory glyph exact matching
-  " (enabled by default when g:Icons_UnicodeDecorateFolderNodes is set to 1)
-  let Icons_UnicodeDecorateFolderNodesExactMatches = 1
+  " (enabled by default when g:Icons_utf_DecorateFolderNodes is set to 1)
+  let Icons_utf_DecorateFolderNodesExactMatches = 1
 
 
 
   " change the default folder/directory glyph/icon
-  let g:Icons_UnicodeDecorateFolderNodesDefaultSymbol = 'ƛ'
+  let g:Icons_utf_DecorateFolderNodesDefaultSymbol = 'ƛ'
 
 
 
   " change the default open folder/directory glyph/icon (default is '')
-  let g:DevIconsDefaultFolderOpenSymbol = 'ƛ'
+  let g:IconS_DefaultFolderOpenSymbol = 'ƛ'
 
 
 
   " change the default dictionary mappings for file extension matches
 
-  let g:Icons_UnicodeDecorateFileNodesExtensionSymbols = {} " needed
-  let g:Icons_UnicodeDecorateFileNodesExtensionSymbols['js'] = 'ƛ'
+  let g:Icons_utf_DecorateFileNodesExtensionSymbols = {} " needed
+  let g:Icons_utf_DecorateFileNodesExtensionSymbols['js'] = 'ƛ'
 
 
 
   " change the default dictionary mappings for exact file node matches
 
-  let g:Icons_UnicodeDecorateFileNodesExactSymbols = {} " needed
-  let g:Icons_UnicodeDecorateFileNodesExactSymbols['MyReallyCoolFile.okay'] = 'ƛ'
+  let g:Icons_utf_DecorateFileNodesExactSymbols = {} " needed
+  let g:Icons_utf_DecorateFileNodesExactSymbols['MyReallyCoolFile.okay'] = 'ƛ'
 
 
 
   " add or override individual additional filetypes
 
-  let g:Icons_UnicodeDecorateFileNodesExtensionSymbols = {} " needed
-  let g:Icons_UnicodeDecorateFileNodesExtensionSymbols['myext'] = 'ƛ'
+  let g:Icons_utf_DecorateFileNodesExtensionSymbols = {} " needed
+  let g:Icons_utf_DecorateFileNodesExtensionSymbols['myext'] = 'ƛ'
 
 
 
   " add or override pattern matches for filetypes
   " these take precedence over the file extensions
 
-  let g:Icons_UnicodeDecorateFileNodesPatternSymbols = {} " needed
-  let g:Icons_UnicodeDecorateFileNodesPatternSymbols['.*jquery.*\.js$'] = 'ƛ'
+  let g:Icons_utf_DecorateFileNodesPatternSymbols = {} " needed
+  let g:Icons_utf_DecorateFileNodesPatternSymbols['.*jquery.*\.js$'] = 'ƛ'
 
 specify OS to decide an icon for unix fileformat (_not_ defined by default) -
 this is useful for avoiding unnecessary 'system()' call. see #135 [48] for
@@ -813,7 +813,7 @@ Why isn't it working? How come I don't see any icons?
 
 - check if you are able to see the characters, from ex mode:
 
-  'vim :echo g:Icons_UnicodeDecorateFileNodesDefaultSymbol'
+  'vim :echo g:Icons_utf_DecorateFileNodesDefaultSymbol'
 
 - if all this looks correct you may try this to see if any files show flags
 
@@ -821,7 +821,7 @@ Why isn't it working? How come I don't see any icons?
     display anywhere (NERDTree, vim-airline's statusline, vim-airlines's
     tabline), from ex mode:
 
-  "vim :let g:Icons_UnicodeDecorateFileNodesDefaultSymbol='x'"
+  "vim :let g:Icons_utf_DecorateFileNodesDefaultSymbol='x'"
 
 -------------------------------------------------------------------------------
        *devicons-how-did-you-get-color-matching-based-on-file-type-in-nerdtree*
@@ -934,7 +934,7 @@ Square brackets around icons
                     *devicons-do-i-have-to-use-patched-font-such-as-nerd-fonts*
 Do I have to use a patched font such as Nerd Fonts?
 
-VimDevIcons was desired to work with Nerd Fonts [13], however you do _not_ have
+VimIconS_ was desired to work with Nerd Fonts [13], however you do _not_ have
 to use a patched font or even Nerd Fonts specified glyphs. You have 2 main
 options:
 

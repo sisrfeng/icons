@@ -130,7 +130,7 @@ endf
 
 fun! Icons_NERDTreeDirClose(node)
     let a:node.path.isOpen = 0
-    let glyph = g:Icons_UnicodeDecorateFolderNodesDefaultSymbol
+    let glyph = g:Icons_utf_DecorateFolderNodesDefaultSymbol
     call Icons_NERDTreeDirUpdateFlags(a:node, glyph)
 endf
 
@@ -172,7 +172,7 @@ endf
 fun! Icons_NERDTreeMapActivateNode(node)
     let isOpen = a:node.isOpen
     if isOpen
-        let glyph = g:Icons_UnicodeDecorateFolderNodesDefaultSymbol
+        let glyph = g:Icons_utf_DecorateFolderNodesDefaultSymbol
     el
         let glyph = g:DevIconsDefaultFolderOpenSymbol
     en
@@ -193,7 +193,7 @@ fun! Icons_NERDTreeMapActivateNodeSingleMode(node)
     if g:NERDTreeMouseMode == 3
         let isOpen = a:node.isOpen
         if isOpen
-            let glyph = g:Icons_UnicodeDecorateFolderNodesDefaultSymbol
+            let glyph = g:Icons_utf_DecorateFolderNodesDefaultSymbol
         el
             let glyph = g:DevIconsDefaultFolderOpenSymbol
         en
