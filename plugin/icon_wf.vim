@@ -40,7 +40,7 @@ if exists('g:loaded_icon_wf')  | finish  | en | let g:loaded_icon_wf = 1
     call s:set('g:Icons__FolderExtensionPatternMatching'      , 0)
     call s:set('g:Icons__Distro'                              , 1)
     call s:set('g:Icons_utf_DecorateFolderNodesExactMatches' , 1)
-    call s:set('g:Icons_utf_GlyphDoubleWidth'                , 1)
+
     call s:set('g:Icons_NerdTreeBeforeGlyphPadding'             , ' ')
     call s:set('g:Icons_NerdTreeAfterGlyphPadding'              , ' ')
     call s:set('g:Icons_NerdTreeGitPluginForceVAlign'           , 1)
