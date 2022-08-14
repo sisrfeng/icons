@@ -4,15 +4,15 @@
 
 function! devicons#plugins#ctrlp#init() abort
   let l:ctrlp_warning_message = 'vim-devicons: https://github.com/kien/ctrlp.vim is deprecated since v0.7.0, please use https://github.com/ctrlpvim/ctrlp.vim'
-  let l:ctrlp_warned_file = webdevicons#pluginHome() . '/status_warned_ctrlp'
+  let l:ctrlp_warned_file = icon_wf#pluginHome() . '/status_warned_ctrlp'
 
-  if exists('g:loaded_ctrlp') && g:webdevicons_enable_ctrlp
+  if exists('g:loaded_ctrlp') && g:icon_wf_enable_ctrlp
     let l:forkedCtrlp = exists('g:ctrlp_mruf_map_string')
 
     if l:forkedCtrlp
       if !exists('g:ctrlp_formatline_func')
         " logic for ctrlpvim/ctrlp.vim:
-        let g:ctrlp_formatline_func = 's:formatline(s:curtype() == "buf" ? v:val : WebDevIconsGetFileTypeSymbol(v:val) . " " . v:val) '
+        let g:ctrlp_formatline_func = 's:formatline(s:curtype() == "buf" ? v:val : File_Icon(v:val) . " " . v:val) '
       endif
     elseif empty(glob(l:ctrlp_warned_file))
       " logic for kien/ctrlp.vim:

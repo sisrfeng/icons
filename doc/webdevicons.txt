@@ -273,12 +273,12 @@ NERDTree
 Should work "out of the box", no particular configuration should be needed.
 
   " Can be enabled or disabled
-  let g:webdevicons_enable_nerdtree = 1
+  let g:icon_wf_enable_nerdtree = 1
 
 
 
   " whether or not to show the nerdtree brackets around flags
-  let g:webdevicons_conceal_nerdtree_brackets = 1
+  let g:icon_wf_conceal_nerdtree_brackets = 1
 
 -------------------------------------------------------------------------------
 *devicons-unite*
@@ -288,7 +288,7 @@ Should work "out of the box", no particular configuration should be needed.
 
   " Can be enabled or disabled
   " adding the custom source to unite
-  let g:webdevicons_enable_unite = 1
+  let g:icon_wf_enable_unite = 1
 
 -------------------------------------------------------------------------------
 *devicons-denite*
@@ -298,7 +298,7 @@ Should work "out of the box", no particular configuration should be needed.
 
   " Can be enabled or disabled
   " Adding the custom source to denite
-  let g:webdevicons_enable_denite = 1
+  let g:icon_wf_enable_denite = 1
 
 -------------------------------------------------------------------------------
 *devicons-vimfiler*
@@ -308,7 +308,7 @@ Should work "out of the box", no particular configuration should be needed.
 
   " Can be enabled or disabled
   " adding the column to vimfiler
-  let g:webdevicons_enable_vimfiler = 1
+  let g:icon_wf_enable_vimfiler = 1
 
 -------------------------------------------------------------------------------
 *devicons-ctrlp*
@@ -318,7 +318,7 @@ Should work "out of the box", no particular configuration should be needed.
 
   " Can be enabled or disabled
   " add glyphs to all modes
-  let g:webdevicons_enable_ctrlp = 1
+  let g:icon_wf_enable_ctrlp = 1
 
 -------------------------------------------------------------------------------
 *devicons-airline*
@@ -327,12 +327,12 @@ Airline
 Should work "out of the box", no particular configuration should be needed.
 
   " adding to vim-airline's tabline
-  let g:webdevicons_enable_airline_tabline = 1
+  let g:icon_wf_enable_airline_tabline = 1
 
 
 
   " adding to vim-airline's statusline
-  let g:webdevicons_enable_airline_statusline = 1
+  let g:icon_wf_enable_airline_statusline = 1
 
 -------------------------------------------------------------------------------
 *devicons-startify*
@@ -342,14 +342,14 @@ Should work "out of the box", no particular configuration should be needed.
 
   " Can be enabled or disabled
   " adding to vim-startify screen
-  let g:webdevicons_enable_startify = 1
+  let g:icon_wf_enable_startify = 1
 
 -------------------------------------------------------------------------------
 *devicons-lightline-setup*
 Lightline Setup
 
 To add the appropriate icon to lightline [7], call the function
-'WebDevIconsGetFileTypeSymbol()' and/or 'WebDevIconsGetFileFormatSymbol()' in
+'File_Icon()' and/or 'WebDevIconsGetFileFormatSymbol()' in
 your '.vimrc'. For example, you could set your sections to:
 
   let g:lightline = {
@@ -360,7 +360,7 @@ your '.vimrc'. For example, you could set your sections to:
         \ }
 
   function! MyFiletype()
-    return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+    return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . File_Icon() : 'no ft') : ''
   endfunction
 
   function! MyFileformat()
@@ -393,7 +393,7 @@ powerline configuration changes:
 file type segment
 
   {
-      "function": "vim_devicons.powerline.segments.webdevicons",
+      "function": "vim_devicons.powerline.segments.icon_wf",
       "priority": 10,
       "draw_soft_divider": false,
       "after": "  "
@@ -402,7 +402,7 @@ file type segment
 file format segment
 
   {
-      "function": "vim_devicons.powerline.segments.webdevicons_file_format",
+      "function": "vim_devicons.powerline.segments.icon_wf_file_format",
       "draw_soft_divider": false,
       "exclude_modes": ["nc"],
       "priority": 90
@@ -418,7 +418,7 @@ Should work "out of the box", no particular configuration should be needed.
 
   " Can be enabled or disabled
   " adding to flagship's statusline
-  let g:webdevicons_enable_flagship_statusline = 1
+  let g:icon_wf_enable_flagship_statusline = 1
 
 ===============================================================================
 *devicons-detailed-features*
@@ -508,47 +508,47 @@ Extra Configuration
   options are provided for customizing or changing the defaults:
 
   " loading the plugin
-  let g:webdevicons_enable = 1
+  let g:icon_wf_enable = 1
 
 
 
   " adding the flags to NERDTree
-  let g:webdevicons_enable_nerdtree = 1
+  let g:icon_wf_enable_nerdtree = 1
 
 
 
   " adding the custom source to unite
-  let g:webdevicons_enable_unite = 1
+  let g:icon_wf_enable_unite = 1
 
 
 
   " adding the column to vimfiler
-  let g:webdevicons_enable_vimfiler = 1
+  let g:icon_wf_enable_vimfiler = 1
 
 
 
   " adding to vim-airline's tabline
-  let g:webdevicons_enable_airline_tabline = 1
+  let g:icon_wf_enable_airline_tabline = 1
 
 
 
   " adding to vim-airline's statusline
-  let g:webdevicons_enable_airline_statusline = 1
+  let g:icon_wf_enable_airline_statusline = 1
 
 
 
   " ctrlp glyphs
-  let g:webdevicons_enable_ctrlp = 1
+  let g:icon_wf_enable_ctrlp = 1
 
 
 
   " adding to vim-startify screen
-  let g:webdevicons_enable_startify = 1
+  let g:icon_wf_enable_startify = 1
 
 
 
   " adding to flagship's statusline
-  let g:webdevicons_enable_flagship_statusline = 1
+  let g:icon_wf_enable_flagship_statusline = 1
 
 
 
@@ -564,7 +564,7 @@ Extra Configuration
 
 
   " whether or not to show the nerdtree brackets around flags
-  let g:webdevicons_conceal_nerdtree_brackets = 1
+  let g:icon_wf_conceal_nerdtree_brackets = 1
 
 
 
@@ -579,7 +579,7 @@ Extra Configuration
 
 
   " Adding the custom source to denite
-  let g:webdevicons_enable_denite = 1
+  let g:icon_wf_enable_denite = 1
 
 
 
@@ -693,7 +693,7 @@ API
   " parameters: a:1 (filename), a:2 (isDirectory)
   " both parameters optional
   " by default without parameters uses buffer name
-  WebDevIconsGetFileTypeSymbol(...)
+  File_Icon(...)
 
   " returns the font character that represents
   " the file format as an icon (windows, linux, mac)
@@ -704,25 +704,25 @@ API
 Public Methods
 
   " Returns the current version of the plugin
-  webdevicons#version()
+  icon_wf#version()
 
 
 
-  " Calls webdevicons#softRefresh()
+  " Calls icon_wf#softRefresh()
   " basically a backwards compatibility convenience
-  webdevicons#refresh()
+  icon_wf#refresh()
 
 
 
   " Does a 'hard' refresh of NERDTree
   " resets vim-devicons syntax and closes and reopens NERDTree
-  webdevicons#hardRefresh()
+  icon_wf#hardRefresh()
 
 
 
   " Does a 'soft' refresh of NERDTree
   " resets vim-devicons syntax and toggles NERDTree to the same state
-  webdevicons#softRefresh()
+  icon_wf#softRefresh()
 
 -------------------------------------------------------------------------------
 *devicons-api-examples*
@@ -734,7 +734,7 @@ Status line
 
 Custom vim status line (not relying on vim-airline or lightline):
 
-  set statusline=%f\ %{WebDevIconsGetFileTypeSymbol()}\ %h%w%m%r\ %=%(%l,%c%V\ %Y\ %=\ %P%)
+  set statusline=%f\ %{File_Icon()}\ %h%w%m%r\ %=%(%l,%c%V\ %Y\ %=\ %P%)
 
 -------------------------------------------------------------------------------
 *devicons-simple-function-call*
@@ -752,8 +752,8 @@ vim-startify
 
   let entry_format = "'   ['. index .']'. repeat(' ', (3 - strlen(index)))"
 
-  if exists('*WebDevIconsGetFileTypeSymbol')  " support for vim-devicons
-    let entry_format .= ". WebDevIconsGetFileTypeSymbol(entry_path) .' '.  entry_path"
+  if exists('*File_Icon')  " support for vim-devicons
+    let entry_format .= ". File_Icon(entry_path) .' '.  entry_path"
   else
     let entry_format .= '. entry_path'
   endif
@@ -804,18 +804,18 @@ Why isn't it working? How come I don't see any icons?
 
 - check if the plugin is loaded (should give '1'), from ex mode:
 
-  'vim :echo loaded_webdevicons'
+  'vim :echo loaded_icon_wf'
 
 - check if the plugin is enabled (should give '1'), from ex mode:
 
-  'vim :echo g:webdevicons_enable'
+  'vim :echo g:icon_wf_enable'
 
 - check if the plugin is enabled for NERDTree (should give '1'), from ex
   mode:
 
   - this should _NOT_ need to be set under normal circumstances
 
-  'vim :echo g:webdevicons_enable_nerdtree'
+  'vim :echo g:icon_wf_enable_nerdtree'
 
 - check if you are able to see the characters, from ex mode:
 
@@ -893,7 +893,7 @@ How do I solve issues after re-sourcing my *vimrc*?
 
 - Try adding this to the bottom of your |vimrc|
 
-  'vim if exists("g:loaded_webdevicons") call webdevicons#refresh() endif'
+  'vim if exists("g:loaded_icon_wf") call icon_wf#refresh() endif'
 
 -------------------------------------------------------------------------------
                               *devicons-why-do-i-have-artifacts-after-of-icons*
@@ -919,7 +919,7 @@ Square brackets around icons
 
   - Check if the plugin feature is set (should be '1'):
 
-  'vim echo g:webdevicons_conceal_nerdtree_brackets'
+  'vim echo g:icon_wf_conceal_nerdtree_brackets'
 
   - Check that your vim was compiled with the 'conceal' feature (should be
     '+conceal'):

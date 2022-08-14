@@ -1,5 +1,5 @@
 " Version: 0.11.0
-" Webpage: https://github.com/ryanoasis/vim-devicons
+"  https://github.com/ryanoasis/vim-devicons
 
 let s:version = '0.11.0'
 let s:plugin_home = expand('<sfile>:p:h:h')
@@ -10,9 +10,9 @@ scriptencoding utf-8
 " standard fix/safety
     let s:save_cpo = &cpo  | set cpo&vim
 
-    if exists('g:loaded_webdevicons')  | finish  | en
+    if exists('g:loaded_icon_wf')  | finish  | en
 
-    let g:loaded_webdevicons = 1
+    let g:loaded_icon_wf = 1
 
 " config enable / disable settings
     " only if variable is not defined.
@@ -31,19 +31,19 @@ scriptencoding utf-8
         en
     endf
 
-    call s:set('g:webdevicons_enable'                                        , 1)
-    call s:set('g:webdevicons_enable_nerdtree'                               , 1)
-    call s:set('g:webdevicons_enable_unite '                                 , 1)
-    call s:set('g:webdevicons_enable_denite'                                 , 1)
-    call s:set('g:webdevicons_enable_vimfiler'                               , 1)
-    call s:set('g:webdevicons_enable_ctrlp'                                  , 1)
-    call s:set('g:webdevicons_enable_airline_tabline'                        , 1)
-    call s:set('g:webdevicons_enable_airline_statusline'                     , 1)
-    call s:set('g:webdevicons_enable_airline_statusline_fileformat_symbols'  , 1)
-    call s:set('g:webdevicons_enable_flagship_statusline'                    , 1)
-    call s:set('g:webdevicons_enable_flagship_statusline_fileformat_symbols' , 1)
-    call s:set('g:webdevicons_enable_startify'                               , 1)
-    call s:set('g:webdevicons_conceal_nerdtree_brackets'                     , 1)
+    call s:set('g:icon_wf_enable'                                        , 1)
+    call s:set('g:icon_wf_enable_nerdtree'                               , 1)
+    call s:set('g:icon_wf_enable_unite '                                 , 1)
+    call s:set('g:icon_wf_enable_denite'                                 , 1)
+    call s:set('g:icon_wf_enable_vimfiler'                               , 1)
+    call s:set('g:icon_wf_enable_ctrlp'                                  , 1)
+    call s:set('g:icon_wf_enable_airline_tabline'                        , 1)
+    call s:set('g:icon_wf_enable_airline_statusline'                     , 1)
+    call s:set('g:icon_wf_enable_airline_statusline_fileformat_symbols'  , 1)
+    call s:set('g:icon_wf_enable_flagship_statusline'                    , 1)
+    call s:set('g:icon_wf_enable_flagship_statusline_fileformat_symbols' , 1)
+    call s:set('g:icon_wf_enable_startify'                               , 1)
+    call s:set('g:icon_wf_conceal_nerdtree_brackets'                     , 1)
     call s:set('g:DevIconsAppendArtifactFix'                                 , has('gui_running') ? 1 : 0)
     call s:set('g:DevIconsArtifactFixChar'                                   , ' ')
 
@@ -288,7 +288,7 @@ scriptencoding utf-8
                 \ 'ahk'         :'',
                 \ 'autohotkey'  :'',
                 \ 'w'           :'🗀',
-                \ 'man'         :'👤',
+                \ 'man'         :'⚦',
                 \ 'txt'         :'📄',
                 \}
 
@@ -387,8 +387,8 @@ scriptencoding utf-8
 
 
     fun! s:setSyntax()
-        if g:webdevicons_enable_nerdtree == 1 && g:webdevicons_conceal_nerdtree_brackets == 1
-        augroup webdevicons_conceal_nerdtree_brackets
+        if g:icon_wf_enable_nerdtree == 1 && g:icon_wf_conceal_nerdtree_brackets == 1
+        augroup icon_wf_conceal_nerdtree_brackets
             au!
             au      FileType nerdtree syntax match hideBracketsInNerdTree "\]" contained conceal containedin=NERDTreeFlags
             au      FileType nerdtree syntax match hideBracketsInNerdTree "\[" contained conceal containedin=NERDTreeFlags
@@ -405,8 +405,8 @@ scriptencoding utf-8
     " NERDTree
         " stole solution/idea from nerdtree-git-plugin :)
             fun! s:setCursorHold()
-                if g:webdevicons_enable_nerdtree
-                augroup webdevicons_cursor_hold
+                if g:icon_wf_enable_nerdtree
+                augroup icon_wf_cursor_hold
                     au      CursorHold * silent! call s:CursorHoldUpdate()
                 augroup END
                 en
@@ -440,14 +440,14 @@ scriptencoding utf-8
             endf
 
         fun! s:hardRefreshNerdTree()
-            if g:webdevicons_enable_nerdtree == 1 && g:webdevicons_conceal_nerdtree_brackets == 1 && g:NERDTree.IsOpen()
+            if g:icon_wf_enable_nerdtree == 1 && g:icon_wf_conceal_nerdtree_brackets == 1 && g:NERDTree.IsOpen()
             NERDTreeClose
             NERDTree
             en
         endf
 
         fun! s:softRefreshNerdTree()
-            if g:webdevicons_enable_nerdtree == 1 && exists('g:NERDTree') && g:NERDTree.IsOpen()
+            if g:icon_wf_enable_nerdtree == 1 && exists('g:NERDTree') && g:NERDTree.IsOpen()
             NERDTreeToggle
             NERDTreeToggle
             en
@@ -460,40 +460,40 @@ scriptencoding utf-8
             call s:setCursorHold()
 
             if exists('g:loaded_flagship') | call devicons#plugins#flagship#init() | endif
-            if exists('g:loaded_unite') && g:webdevicons_enable_unite | call devicons#plugins#unite#init() | endif
-            if exists('g:loaded_denite') && g:webdevicons_enable_denite | call devicons#plugins#denite#init() | endif
-            if exists('g:loaded_vimfiler') && g:webdevicons_enable_vimfiler | call devicons#plugins#vimfiler#init() | endif
-            if exists('g:loaded_ctrlp') && g:webdevicons_enable_ctrlp | call devicons#plugins#ctrlp#init() | endif
-            if exists('g:loaded_startify') && g:webdevicons_enable_startify | call devicons#plugins#startify#init() | endif
+            if exists('g:loaded_unite') && g:icon_wf_enable_unite | call devicons#plugins#unite#init() | endif
+            if exists('g:loaded_denite') && g:icon_wf_enable_denite | call devicons#plugins#denite#init() | endif
+            if exists('g:loaded_vimfiler') && g:icon_wf_enable_vimfiler | call devicons#plugins#vimfiler#init() | endif
+            if exists('g:loaded_ctrlp') && g:icon_wf_enable_ctrlp | call devicons#plugins#ctrlp#init() | endif
+            if exists('g:loaded_startify') && g:icon_wf_enable_startify | call devicons#plugins#startify#init() | endif
         endf
 
 
 " public functions
-    fun! webdevicons#version()
+    fun! icon_wf#version()
         return s:version
     endf
 
-    fun! webdevicons#pluginHome()
+    fun! icon_wf#pluginHome()
         return s:plugin_home
     endf
 
     " allow the first version of refresh to now call softRefresh
-    fun! webdevicons#refresh()
-        call webdevicons#softRefresh()
+    fun! icon_wf#refresh()
+        call icon_wf#softRefresh()
     endf
 
-    fun! webdevicons#hardRefresh()
+    fun! icon_wf#hardRefresh()
         call s:setSyntax()
         call s:hardRefreshNerdTree()
     endf
 
-    fun! webdevicons#softRefresh()
+    fun! icon_wf#softRefresh()
         call s:setSyntax()
         call s:softRefreshNerdTree()
     endf
 
     " a:1 (bufferName), a:2 (isDirectory)
-    fun! WebDevIconsGetFileTypeSymbol(...) abort
+    fun! File_Icon(...) abort
         if a:0 == 0
         let fileNodeExtension = !empty(expand('%:e')) ? expand('%:e') : &filetype
         let fileNode = expand('%:t')
@@ -579,21 +579,21 @@ scriptencoding utf-8
         fun! AirlineWebDevIcons(...)
             let w:airline_section_x = get(w:, 'airline_section_x',
                 \ get(g:, 'airline_section_x', ''))
-            let w:airline_section_x .= ' %{WebDevIconsGetFileTypeSymbol()} '
+            let w:airline_section_x .= ' %{File_Icon()} '
             let hasFileFormatEncodingPart = airline#parts#ffenc() !=? ''
-            if g:webdevicons_enable_airline_statusline_fileformat_symbols && hasFileFormatEncodingPart
+            if g:icon_wf_enable_airline_statusline_fileformat_symbols && hasFileFormatEncodingPart
             let w:airline_section_y = ' %{&fenc . " " . WebDevIconsGetFileFormatSymbol()} '
             en
         endf
 
-        if g:webdevicons_enable == 1 && exists('g:loaded_airline') && g:loaded_airline == 1 && g:webdevicons_enable_airline_statusline
+        if g:icon_wf_enable == 1 && exists('g:loaded_airline') && g:loaded_airline == 1 && g:icon_wf_enable_airline_statusline
             call airline#add_statusline_func('AirlineWebDevIcons')
         en
 
-        if g:webdevicons_enable == 1 && g:webdevicons_enable_airline_tabline
+        if g:icon_wf_enable == 1 && g:icon_wf_enable_airline_tabline
             " Store original formatter.
-            let g:_webdevicons_airline_orig_formatter = get(g:, 'airline#extensions#tabline#formatter', 'default')
-            let g:airline#extensions#tabline#formatter = 'webdevicons'
+            let g:_icon_wf_airline_orig_formatter = get(g:, 'airline#extensions#tabline#formatter', 'default')
+            let g:airline#extensions#tabline#formatter = 'icon_wf'
         en
 
     " for nerdtree plugin
@@ -612,13 +612,13 @@ scriptencoding utf-8
 
             if !path.isDirectory
                 " Hey we got a regular file, lets get it's proper icon
-                let flag = prePadding . WebDevIconsGetFileTypeSymbol(path.str()) . postPadding
+                let flag = prePadding . File_Icon(path.str()) . postPadding
 
             elseif path.isDirectory && g:WebDevIconsUnicodeDecorateFolderNodes == 1
                 " Ok we got a directory, some more tests and checks
                 let directoryOpened = 0
 
-                if g:DevIconsEnableFoldersOpenClose && len(path.flagSet._flagsForScope('webdevicons')) > 0
+                if g:DevIconsEnableFoldersOpenClose && len(path.flagSet._flagsForScope('icon_wf')) > 0
                     " did the user set different icons for open and close?
 
                     " isOpen is not available on the path listener directly
@@ -641,7 +641,7 @@ scriptencoding utf-8
                             let flag = prePadding . g:WebDevIconsUnicodeDecorateFolderNodesSymlinkSymbol . artifactFix . postPadding
                         el
                             " We have a regular folder
-                            let flag = prePadding . WebDevIconsGetFileTypeSymbol(path.str(), path.isDirectory) . postPadding
+                            let flag = prePadding . File_Icon(path.str(), path.isDirectory) . postPadding
                         en
                     en
 
@@ -667,10 +667,10 @@ scriptencoding utf-8
                 let flag = prePadding . ' ' . artifactFix . postPadding
             en
 
-            call path.flagSet.clearFlags('webdevicons')
+            call path.flagSet.clearFlags('icon_wf')
 
             if flag !=? ''
-                call path.flagSet.addFlag('webdevicons', flag)
+                call path.flagSet.addFlag('icon_wf', flag)
             en
         endf
 

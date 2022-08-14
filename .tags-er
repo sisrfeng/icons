@@ -9,40 +9,23 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	//
-API	DEVELOPER.md	/^### API$/;"	S
-API Examples	DEVELOPER.md	/^#### API Examples$/;"	t	subsection:API
 Acknowledgments	README.md	/^Acknowledgments$/;"	s
 AirlineWebDevIcons	plugin/webdevicons.vim	/^        fun! AirlineWebDevIcons(...)$/;"	f
 Any background context you can provide?	.github/PULL_REQUEST_TEMPLATE.md	/^#### Any background context you can provide?$/;"	t
-Attribution	CODE_OF_CONDUCT.md	/^## Attribution$/;"	s	chapter:Contributor Covenant Code of Conduct
-CHANGELOG	CHANGELOG.md	/^CHANGELOG$/;"	c
 Contributing	README.md	/^Contributing$/;"	s
-Contributing Guide	CONTRIBUTING.md	/^# Contributing Guide$/;"	c
-Contributor Covenant Code of Conduct	CODE_OF_CONDUCT.md	/^# Contributor Covenant Code of Conduct$/;"	c
 Developers	README.md	/^Developers$/;"	s
-Enforcement	CODE_OF_CONDUCT.md	/^## Enforcement$/;"	s	chapter:Contributor Covenant Code of Conduct
 Features	README.md	/^Features$/;"	s
 Filter	rplugin/python3/denite/filter/devicons_denite_converter.py	/^class Filter(Base):$/;"	c
 How should this be manually tested?	.github/PULL_REQUEST_TEMPLATE.md	/^#### How should this be manually tested?$/;"	t
-How to contribute	CONTRIBUTING.md	/^## How to contribute$/;"	s	chapter:Contributing Guide
 Installation	README.md	/^Installation$/;"	s
-Integration with other plugins	DEVELOPER.md	/^#### Integration with other plugins$/;"	t	subsection:API
 License	README.md	/^License$/;"	s
 NERDTreeWebDevIconsRefreshListener	plugin/webdevicons.vim	/^        fun! NERDTreeWebDevIconsRefreshListener(event)$/;"	f
 Optional Info	.github/ISSUE_TEMPLATE.md	/^#### Optional Info$/;"	t
-Our Pledge	CODE_OF_CONDUCT.md	/^## Our Pledge$/;"	s	chapter:Contributor Covenant Code of Conduct
-Our Responsibilities	CODE_OF_CONDUCT.md	/^## Our Responsibilities$/;"	s	chapter:Contributor Covenant Code of Conduct
-Our Standards	CODE_OF_CONDUCT.md	/^## Our Standards$/;"	s	chapter:Contributor Covenant Code of Conduct
 Promotion	README.md	/^### Promotion$/;"	S	section:Contributing
-Public Methods	DEVELOPER.md	/^#### Public Methods$/;"	t	subsection:API
 Required Info	.github/ISSUE_TEMPLATE.md	/^#### Required Info$/;"	t
 Requirements	.github/ISSUE_TEMPLATE.md	/^#### Requirements$/;"	t
 Requirements (please check off with 'x')	.github/PULL_REQUEST_TEMPLATE.md	/^#### Requirements (please check off with 'x')$/;"	t
-Scope	CODE_OF_CONDUCT.md	/^## Scope$/;"	s	chapter:Contributor Covenant Code of Conduct
 Screenshots (if appropriate or helpful)	.github/PULL_REQUEST_TEMPLATE.md	/^#### Screenshots (if appropriate or helpful)$/;"	t
-Simple function call	DEVELOPER.md	/^##### Simple function call$/;"	T	subsubsection:API""API Examples
-Status line	DEVELOPER.md	/^##### Status line$/;"	T	subsubsection:API""API Examples
-Things to keep in mind	CONTRIBUTING.md	/^## Things to keep in mind$/;"	s	chapter:Contributing Guide
 Troubleshooting	README.md	/^Troubleshooting$/;"	s
 WebDevIconsGetFileFormatSymbol	plugin/webdevicons.vim	/^    fun! WebDevIconsGetFileFormatSymbol(...)$/;"	f
 WebDevIconsGetFileTypeSymbol	plugin/webdevicons.vim	/^    fun! WebDevIconsGetFileTypeSymbol(...) abort$/;"	f
@@ -95,6 +78,8 @@ g:webdevicons_enable_nerdtree	nerdtree_plugin/webdevicons.vim	/^     let g:webde
 g:webdevicons_enable_nerdtree	nerdtree_plugin/webdevicons.vim	/^  let g:webdevicons_enable_nerdtree = 1$/;"	v
 g:webdevicons_gui_glyph_fix	nerdtree_plugin/webdevicons.vim	/^    let g:webdevicons_gui_glyph_fix = 0$/;"	v
 g:webdevicons_gui_glyph_fix	nerdtree_plugin/webdevicons.vim	/^    let g:webdevicons_gui_glyph_fix = 1$/;"	v
+icon_wf	pythonx/vim_devicons/powerline/segments.py	/^def icon_wf(pl, segment_info):$/;"	f
+icon_wf_file_format	pythonx/vim_devicons/powerline/segments.py	/^def icon_wf_file_format(pl, segment_info):$/;"	f
 s:CursorHoldUpdate	plugin/webdevicons.vim	/^            fun! s:CursorHoldUpdate()$/;"	f
 s:DevIconsGetArtifactFix	plugin/webdevicons.vim	/^    fun! s:DevIconsGetArtifactFix()$/;"	f
 s:Refresh	nerdtree_plugin/webdevicons.vim	/^function! s:Refresh()$/;"	f
@@ -119,9 +104,7 @@ s:softRefreshNerdTree	plugin/webdevicons.vim	/^        fun! s:softRefreshNerdTre
 s:strip	plugin/webdevicons.vim	/^    fun! s:strip(input)$/;"	f
 s:version	plugin/webdevicons.vim	/^let s:version = '0.11.0'$/;"	v
 vim	pythonx/vim_devicons/powerline/segments.py	/^	vim = {}$/;"	v
-vim-startify	DEVELOPER.md	/^##### vim-startify$/;"	T	subsubsection:API""Integration with other plugins
 vimfiler#columns#devicons#define	autoload/vimfiler/columns/devicons.vim	/^function! vimfiler#columns#devicons#define() abort$/;"	f
-webdevicons	pythonx/vim_devicons/powerline/segments.py	/^def webdevicons(pl, segment_info):$/;"	f
 webdevicons#hardRefresh	plugin/webdevicons.vim	/^    fun! webdevicons#hardRefresh()$/;"	f
 webdevicons#pluginHome	plugin/webdevicons.vim	/^    fun! webdevicons#pluginHome()$/;"	f
 webdevicons#refresh	plugin/webdevicons.vim	/^    fun! webdevicons#refresh()$/;"	f
@@ -129,6 +112,6 @@ webdevicons#softRefresh	plugin/webdevicons.vim	/^    fun! webdevicons#softRefres
 webdevicons#version	plugin/webdevicons.vim	/^    fun! webdevicons#version()$/;"	f
 webdevicons_conceal_nerdtree_brackets	plugin/webdevicons.vim	/^        augroup webdevicons_conceal_nerdtree_brackets$/;"	a
 webdevicons_cursor_hold	plugin/webdevicons.vim	/^                augroup webdevicons_cursor_hold$/;"	a
-webdevicons_file_format	pythonx/vim_devicons/powerline/segments.py	/^def webdevicons_file_format(pl, segment_info):$/;"	f
 webdevicons_flagship_filesymbol	autoload/devicons/plugins/flagship.vim	/^    augroup webdevicons_flagship_filesymbol$/;"	a
 webdevicons_flagship_filetype	autoload/devicons/plugins/flagship.vim	/^    augroup webdevicons_flagship_filetype$/;"	a
+wf_home	pythonx/vim_devicons/powerline/segments.py	/^    import os       ; wf_home = os.path.expanduser("~\/")$/;"	v

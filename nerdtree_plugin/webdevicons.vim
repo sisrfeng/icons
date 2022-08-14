@@ -4,12 +4,12 @@
 " License: see LICENSE
 
 " @todo fix duplicate global variable initialize here:
-if !exists('g:webdevicons_enable')
-  let g:webdevicons_enable = 1
+if !exists('g:icon_wf_enable')
+  let g:icon_wf_enable = 1
 endif
 
-if !exists('g:webdevicons_enable_nerdtree')
-  let g:webdevicons_enable_nerdtree = 1
+if !exists('g:icon_wf_enable_nerdtree')
+  let g:icon_wf_enable_nerdtree = 1
 endif
 
 if !exists('g:DevIconsEnableFoldersOpenClose')
@@ -28,11 +28,11 @@ endif
 
 " Temporary (hopefully) fix for glyph issues in gvim (proper fix is with the
 " actual font patcher)
-if !exists('g:webdevicons_gui_glyph_fix')
+if !exists('g:icon_wf_gui_glyph_fix')
   if has('gui_running')
-    let g:webdevicons_gui_glyph_fix = 1
+    let g:icon_wf_gui_glyph_fix = 1
   else
-    let g:webdevicons_gui_glyph_fix = 0
+    let g:icon_wf_gui_glyph_fix = 0
   endif
 endif
 
@@ -44,35 +44,35 @@ if !exists('g:DevIconsEnableNERDTreeRedraw')
   endif
 endif
 
-if g:webdevicons_enable_nerdtree == 1
+if g:icon_wf_enable_nerdtree == 1
   if !exists('g:loaded_nerd_tree')
      echohl WarningMsg |
-       \ echomsg 'vim-webdevicons requires NERDTree to be loaded before vim-webdevicons.'
+       \ echomsg 'vim-icon_wf requires NERDTree to be loaded before vim-icon_wf.'
   endif
 
   if exists('g:loaded_nerd_tree') && g:loaded_nerd_tree == 1 && !exists('g:NERDTreePathNotifier')
-     let g:webdevicons_enable_nerdtree = 0
+     let g:icon_wf_enable_nerdtree = 0
      echohl WarningMsg |
-        \ echomsg 'vim-webdevicons requires a newer version of NERDTree to show glyphs in NERDTree - consider updating NERDTree.'
+        \ echomsg 'vim-icon_wf requires a newer version of NERDTree to show glyphs in NERDTree - consider updating NERDTree.'
   endif
 
   " @todo I don't even want this to execute UNLESS the user has the
   " 'nerdtree-git-plugin' INSTALLED (not LOADED)
   " As it currently functions this warning will display even if the user does
-  " not have nerdtree-git-plugin not just if it isn't loaded yet 
+  " not have nerdtree-git-plugin not just if it isn't loaded yet
   " (not what we want)
   "if !exists('g:loaded_nerdtree_git_status')
   "   echohl WarningMsg |
-  "     \ echomsg 'vim-webdevicons works better when 'nerdtree-git-plugin' is loaded before vim-webdevicons (small refresh issues otherwise).'
+  "     \ echomsg 'vim-icon_wf works better when 'nerdtree-git-plugin' is loaded before vim-icon_wf (small refresh issues otherwise).'
   "endif
 endif
 
-if !exists('g:webdevicons_enable_airline_tabline')
-  let g:webdevicons_enable_airline_tabline = 1
+if !exists('g:icon_wf_enable_airline_tabline')
+  let g:icon_wf_enable_airline_tabline = 1
 endif
 
-if !exists('g:webdevicons_enable_airline_statusline')
-  let g:webdevicons_enable_airline_statusline = 1
+if !exists('g:icon_wf_enable_airline_statusline')
+  let g:icon_wf_enable_airline_statusline = 1
 endif
 
 function! s:SetupListeners()
@@ -139,10 +139,10 @@ function! WebDevIconsNERDTreeDirUpdateFlags(node, glyph)
 
   let flag = prePadding . a:glyph . postPadding
 
-  call a:node.path.flagSet.clearFlags('webdevicons')
+  call a:node.path.flagSet.clearFlags('icon_wf')
 
   if flag !=? ''
-    call a:node.path.flagSet.addFlag('webdevicons', flag)
+    call a:node.path.flagSet.addFlag('icon_wf', flag)
     "echom "added flag of " . flag
     call a:node.path.refreshFlags(b:NERDTree)
     "echom "flagset is now " . string(a:node.path.flagSet)
@@ -207,7 +207,7 @@ function! WebDevIconsNERDTreeMapActivateNode(node)
   endif
 endfunction
 
-" NERDTreeMapActivateNodeSingleMode 
+" NERDTreeMapActivateNodeSingleMode
 " handle the user activating a tree node if NERDTreeMouseMode is setted to 3
 " scope: global
 function! WebDevIconsNERDTreeMapActivateNodeSingleMode(node)
@@ -293,7 +293,7 @@ function! WebDevIconsNERDTreeMapUpdirKeepOpen()
   endif
 endfunction
 
-if g:webdevicons_enable == 1 && g:webdevicons_enable_nerdtree == 1
+if g:icon_wf_enable == 1 && g:icon_wf_enable_nerdtree == 1
   call s:SetupListeners()
 
   if g:DevIconsEnableFoldersOpenClose
@@ -367,7 +367,7 @@ if g:webdevicons_enable == 1 && g:webdevicons_enable_nerdtree == 1
 
   " Temporary (hopefully) fix for glyph issues in gvim (proper fix is with the
   " actual font patcher)
-  if g:webdevicons_gui_glyph_fix ==# 1
+  if g:icon_wf_gui_glyph_fix ==# 1
     call NERDTreeAddKeyMap({
       \ 'key': g:NERDTreeMapChangeRoot,
       \ 'callback': 'WebDevIconsNERDTreeChangeRootHandler',

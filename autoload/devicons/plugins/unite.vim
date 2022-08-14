@@ -15,7 +15,7 @@ function! devicons#plugins#unite#init() abort
         let filename = candidate.word
       endif
 
-      let icon = WebDevIconsGetFileTypeSymbol(filename, isdirectory(filename))
+      let icon = File_Icon(filename, isdirectory(filename))
 
       " prevent filenames of buffers getting 'lost'
       if filename != path

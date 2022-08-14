@@ -1,3 +1,10 @@
+if "wf_package":
+    import os       ; wf_home = os.path.expanduser("~/")
+    import sys      ; sys.path.append(wf_home)
+    import warnings ; warnings.filterwarnings("ignore")
+    from  dotF.leo_common.leo_base   import *
+
+
 # -*- coding: utf-8 -*-
 # vim:se fenc=utf8 noet:
 from .base import Base
@@ -20,7 +27,7 @@ class Filter(Base):
 			elif 'word' in candidate and 'action__path' in candidate:
 				filename = candidate['word']
 
-			icon = self.vim.funcs.WebDevIconsGetFileTypeSymbol(
+			icon = self.vim.funcs.File_Icon(
 				filename, isdir(filename))
 
 			# Customize output format if not done already.
