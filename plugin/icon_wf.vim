@@ -155,6 +155,7 @@ if exists('g:loaded_icon_wf')  | finish  | en | let g:loaded_icon_wf = 1
                 \ 'php'      : '',
                 \
                 \ 'py'       : '',
+                \ 'pyh'       : '📄',
                 \ 'pyc'      : '',
                 \ 'pyo'      : '',
                 \ 'pyd'      : '',
@@ -273,7 +274,7 @@ if exists('g:loaded_icon_wf')  | finish  | en | let g:loaded_icon_wf = 1
                 \ 'ahk'         :'',
                 \ 'autohotkey'  :'',
                 \ 'w'           :'🗀',
-                \ 'man'         :'⚦',
+                \ 'man'         :'𐌼',
                 \ 'txt'         :'📄',
                 \}
 
